@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DeleteCandidatRoutingModule } from './delete-candidat-routing.module';
+import { AddClientRoutingModule } from './add-client-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    DeleteCandidatRoutingModule
+    AddClientRoutingModule
   ]
 })
-export class DeleteCandidatModule { }
+export class AddClientModule { }

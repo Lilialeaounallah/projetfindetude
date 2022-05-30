@@ -22,17 +22,15 @@ const routes: Routes = [
   loadChildren:()=>import('./views/user/candidat/candidat.module').then((c)=>c.CandidatModule)
   },
   {path:'addCandidat',
-  loadChildren:()=>import('./views/user/add-candidat/add-candidat.module').then((a)=>a.AddCandidatModule)
+  loadChildren:()=>import('./views/user/candidat/add-candidat/add-candidat.module').then((a)=>a.AddCandidatModule)
   },
   {path:'updateCandidat/:id',
-  loadChildren:()=>import('./views/user/update-candidat/update-candidat.module').then((a)=>a.UpdateCandidatModule)
+  loadChildren:()=>import('./views/user/candidat/update-candidat/update-candidat.module').then((a)=>a.UpdateCandidatModule)
   },
   {path:'detailsCandidat/:id',
-  loadChildren:()=>import('./views/user/details-candidat/details-candidat.module').then((a)=>a.DetailsCandidatModule)
+  loadChildren:()=>import('./views/user/candidat/details-candidat/details-candidat.module').then((a)=>a.DetailsCandidatModule)
   },
-  {path:'deleteCandidat/:id',
-  loadChildren:()=>import('./views/user/delete-candidat/delete-candidat.module').then((d)=>d.DeleteCandidatModule)
-  },
+
   {path:'positionnement',
   loadChildren:()=>import('./views/user/positionnement/positionnement.module').then((po)=>po.PositionnementModule)
   },

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
-import { Candidat } from '../models/candidat';
-import { CandidatService } from '../services/candidat.service';
+import { Candidat } from '../../models/candidat';
+import { CandidatService } from '../../services/candidat.service';
 
 @Component({
   selector: 'app-add-candidat',
@@ -10,7 +10,7 @@ import { CandidatService } from '../services/candidat.service';
   styleUrls: ['./add-candidat.component.css']
 })
 export class AddCandidatComponent implements OnInit {
-  candidat: Candidat=new Candidat(5,'','','','23/02/1999','test@gmail.com',22333555,'25 aveneue tayeb mhiri','sousse',8888,'tunis','vivier','linkedin','dans 6 mois','souse','ali mguebli','tunis','B','commentaire');
+  candidat: Candidat=new Candidat(0,'','','','','',0,'','',0,'','','','','','','','','');
   constructor(private candidatService : CandidatService) {
   }
 
