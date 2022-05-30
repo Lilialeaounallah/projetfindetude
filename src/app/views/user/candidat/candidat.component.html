@@ -1,0 +1,113 @@
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+        <h5 class="w3-xxxlarge w3-text-red"><b>Candidat</b>
+        </h5>
+        <hr style=" width:50px;border:3px solid red " class="w3-round ">
+    </div>
+
+    <div class="card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
+        <form action=" " target="_blank ">
+            <div class="w3-section ">
+                <h2>Recherche</h2>
+                <input class="w3-input w3-border " type="text " name="Recherche " placeholder="réfèrence du candidat " required>
+            </div>
+
+            <button type="submit " class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom ">chercher</button>
+
+
+        </form>
+
+    </div>
+    <br>
+    <div class="card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-col m4 w3-margin-bottom"></div>
+            <div class="w3-col m4 w3-margin-bottom"></div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div>
+                    <div class="w3-container ">
+                        <div>
+                            <a routerLink="/addCandidat" style="font-size: 20px; color: #f0372a!important;" class="btn">
+                                + créer un candidat
+
+                                </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
+        <h2>Tous les candidats</h2>
+        <div class="w3-responsive ">
+            <table class="w3-table-all ">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">civilité</th>
+                    <th scope="col">nom</th>
+                    <th scope="col">prénom</th>
+                    <th scope="col">Date_de_naissance</th>
+                    <th scope="col">email</th>
+                    <th scope="col">telephonne</th>
+                    <th scope="col">adress</th>
+                    <th scope="col">ville</th>
+                    <th scope="col">code postal</th>
+                    <th scope="col">pays</th>
+                    <th scope="col">etat condidat</th>
+                    <th scope="col">provenance</th>
+                    <th scope="col">disponibllité</th>
+                    <th scope="col">mobilité</th>
+                    <th scope="col">responsable manager</th>
+                    <th scope="col">agence</th>
+                    <th scope="col">evaluation</th>
+                    <th scope="col ">details</th>
+                    <th scope="col ">modifier</th>
+                </tr>
+
+                <tr *ngFor="let condidat of candidats">
+                    <th scope="row">+</th>
+                    <td>{{condidat.civilite}}</td>
+                    <td>{{condidat.nom}}</td>
+                    <td>{{condidat.prenom}}</td>
+                    <td>{{condidat.Date_de_naissance}}</td>
+                    <td>{{condidat.email}}</td>
+                    <td>{{condidat.telephonne}}</td>
+                    <td>{{condidat.adress}}</td>
+                    <td>{{condidat.ville}}</td>
+                    <td>{{condidat.code_postal}}</td>
+                    <td>{{condidat.pays}}</td>
+                    <td>{{condidat.libellet}}</td>
+                    <td>{{condidat.provenance}}</td>
+                    <td>dans 3 mois</td>
+                    <td>Ile de france</td>
+                    <td>{{condidat.responsable_manager}}</td>
+                    <td>{{condidat.agence}}</td>
+                    <td>{{condidat.evaluation}}</td>
+                    <td>
+                        <button routerLink="detailsCandidat/{{condidat.id}}" type=" button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
+                      <span class="glyphicon glyphicon-list "></span> detail
+                    </button>
+                    </td>
+                    <td>
+                        <button routerLink="/updateCandidat/{{condidat.id}} " type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
+                        <span class="glyphicon glyphicon-check "></span> modifier
+                      </button>
+
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- End page content -->

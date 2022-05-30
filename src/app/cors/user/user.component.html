@@ -1,0 +1,126 @@
+<!-- Sidebar/menu -->
+<div class="main-panel">
+    <div class="nav-fix">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="logo-container">
+                        <img class="logo-img" src="./../../../assets/img/octopus-01.png">
+                    </div>
+
+
+                </div>
+                <div class="collapse navbar-collapse">
+                    <!-- <ul class="nav navbar-nav navbar-left">
+              <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-dashboard"></i>
+                      <p class="hidden-lg hidden-md">{{getTitle()}}</p>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="#">
+                      <i class="fa fa-search"></i>
+                      <p class="hidden-lg hidden-md">Search</p>
+                  </a>
+              </li>
+          </ul> -->
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li>
+                  <a href="#">
+                      Account
+                  </a>
+              </li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                          Dropdown
+                          <b class="caret"></b>
+
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                  </ul>
+              </li> -->
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa pe-7s-mail" style="font-size: 25px;"></i>
+                                    <p class="hidden-lg hidden-md"></p>
+                                </a>
+                            </li>
+
+                            <!-- <li>
+                      <a href="#">
+                          <i class="fa fa-search"></i>
+                          <p class="hidden-lg hidden-md">Search</p>
+                      </a>
+                  </li> -->
+                        </ul>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-globe"></i>
+                                <b class="caret"></b>
+                                <span class="notification hidden-sm hidden-xs">5</span>
+                                <p class="hidden-lg hidden-md">
+                                    5 Notifications
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Notification 1</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div>
+                                <img class="img-profile" src="/assets/img/tim_80x80.png" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                      Log out
+                  </a>
+                        </li>
+                        <li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="sidebar">
+        <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="width:300px;font-weight:bold;margin-top:60px !important;" id="mySidebar"><br>
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+
+            <div class="w3-bar-block" style="margin-top:70px;font-family:Segoe UI, Arial;font-size:20px;">
+                <a routerLink="home" class="w3-bar-item w3-button w3-hover-white">Home</a>
+                <a routerLink="societe" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sociétè</a>
+                <a routerLink="client" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Client</a>
+                <a routerLink="besoin" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Besoin</a>
+                <a routerLink="candidat" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Candidat</a>
+                <a routerLink="positionnement" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Positionnement</a>
+                <a routerLink="projet" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Projet</a>
+                <a routerLink="ressource" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ressource</a>
+                <a routerLink="activite" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Acivité et frais</a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<router-outlet>
+</router-outlet>
