@@ -1,22 +1,25 @@
 export class Candidat {
-  id:number;
-  civilite: string;
-  nom: string;
-  prenom: string;
-  Date_de_naissance: string;
-  email: string;
-  telephonne: number;
-  adress: string;
-  ville: string;
-  code_postal: number;
-  pays: string;
-  libellet: string;
-  provenance: string;
-  disponibilite: string;
-  mobilite: string;
-  responsable_manager: string;
-  agence: string;
-  evaluation: string;
+  id!:number;
+  civilite!: string;
+  nom!: string;
+  prenom!: string;
+  Date_de_naissance!: string;
+  email!: string;
+  telephonne!: number;
+  adress!: string;
+  ville!: string;
+  code_postal!: number;
+  pays!: string;
+  libellet!: string;
+  provenance!: string;
+  disponibilite!: string;
+  mobilite!: string;
+  responsable_manager!: string;
+  agence!: string;
+  evaluation!: string;
+  commentaire !:string;
+  // constructor(){
+  // }
   constructor(
     id:number,
     civilite: string,
@@ -35,7 +38,8 @@ export class Candidat {
     mobilite: string,
     responsable_manager: string,
     agence: string,
-    evaluation: string
+    evaluation: string,
+    commentaire :string
   ) {
     this.id=id;
     this.civilite = civilite;
@@ -55,7 +59,9 @@ export class Candidat {
     this.responsable_manager = responsable_manager;
     this.agence = agence;
     this.evaluation = evaluation;
+    this.commentaire = commentaire;
   }
+  
 }
 
 

@@ -19,9 +19,12 @@ export class CandidatComponent implements OnInit {
     this.getAllCandidat();
   }
   getAllCandidat() {
+   
     this._candidatService.getAllCandidat().subscribe((data: Candidat[])=>{
       this.candidats=data;
-      console.log(this.candidats);
+      console.log("aaa",this.candidats);
+    },err=>{
+      console.log("ERROR",err);
     })
   }
 

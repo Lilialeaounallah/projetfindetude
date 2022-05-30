@@ -10,13 +10,13 @@ import { DetailsCandidatComponent } from './views/user/details-candidat/details-
 import { UpdateCandidatComponent } from './views/user/update-candidat/update-candidat.component';
 import { DeleteCandidatComponent } from './views/user/delete-candidat/delete-candidat.component';
 import { HttpClientModule } from '@angular/common/http';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AddCandidatComponent,
     DetailsCandidatComponent,
     UpdateCandidatComponent,
     DeleteCandidatComponent
@@ -25,7 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     CorsModule,
-    HttpClientModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    
 
   ],
   providers: [],

@@ -11,7 +11,7 @@ import { CandidatService } from '../services/candidat.service';
 export class DetailsCandidatComponent implements OnInit {
 
   idCandidat!: number;
-  candidat: Candidat=new Candidat(5,'mm','ale','aounallah','23/02/1999','test@gmail.com',22333555,'25 aveneue tayeb mhiri','sousse',8888,'tunis','vivier','linkedin','dans 6 mois','souse','ali mguebli','tunis','B');
+  candidat: Candidat=new Candidat(5,'mm','ale','aounallah','23/02/1999','test@gmail.com',22333555,'25 aveneue tayeb mhiri','sousse',8888,'tunis','vivier','linkedin','dans 6 mois','souse','ali mguebli','tunis','B','commentaire');
 
 
   constructor(private _candidatService:CandidatService, private route: ActivatedRoute) {
