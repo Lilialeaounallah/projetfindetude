@@ -30,10 +30,10 @@
                 <div>
                     <div class="w3-container ">
                         <div>
-                            <h3 style="font-size: 20px; color: #f0372a!important;">
-                                + créer un client
+                            <a routerLink="/addClient" style="font-size: 20px; color: #f0372a!important;" class="btn">
+                            + créer un client
 
-                            </h3>
+                            </a>
                         </div>
 
                     </div>
@@ -92,12 +92,12 @@
                     <td>AAAAAAAAA</td>
                     <td>BBBBBBBBB</td>
                     <td>CCCCCCCCC</td>
-                    <td> <button type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
+                    <td> <button type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); " routerLink="/detailsClient/1">
                       <span class="glyphicon glyphicon-list "></span> detail
                     </button>
                     </td>
                     <td>
-                        <button type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
+                        <button type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); " routerLink="/updateClient/1">
                         <span class="glyphicon glyphicon-check "></span> modifier
                       </button>
 

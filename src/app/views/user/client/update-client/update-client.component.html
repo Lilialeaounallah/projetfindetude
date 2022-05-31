@@ -1,15 +1,14 @@
 <!-- Photo grid (modal) -->
-<!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
     <!-- Header -->
-    <form #f="ngForm" (ngSubmit)="ajout(f)">
+    <form #f="ngForm" (ngSubmit)="modifier()">
 
         <div class="w3-row-padding">
 
             <div class="w3-half">
                 <div class="w3-container" id="contact" style="margin-top:75px">
-                    <h1 class="w3-xxxlarge w3-text-red"><b>Créer un client.</b></h1>
+                    <h1 class="w3-xxxlarge w3-text-red"><b>Modifier un client.</b></h1>
                     <hr style="width:50px;border:5px solid red" class="w3-round">
                     <div class="card " style="background-color:  rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
 
@@ -93,7 +92,7 @@
                         <div class="w3-section ">
                             <h2>Etat client</h2>
                             <label>etat client</label>
-                            <input class="w3-input w3-border " #etat_client="ngModel" [(ngModel)]="client.etat_client" type="text " name="etat " required>
+                            <input class="w3-input w3-border " #etatclient="ngModel" [(ngModel)]="client.etat_client" type="text " name="etat " required>
                         </div>
 
                         <div class="w3-section ">
@@ -143,7 +142,7 @@
 
 
 
-        <button type="submit " class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom ">Créer
+        <button type="submit " class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom ">modifier
       client</button>
     </form>
 

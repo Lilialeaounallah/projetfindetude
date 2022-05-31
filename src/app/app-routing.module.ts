@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './cors/admin/admin.component';
 import { AuthUserComponent } from './cors/auth-user/auth-user.component';
 import { UserComponent } from './cors/user/user.component';
+import { ClientModule } from './views/user/client/client.module';
 
 const routes: Routes = [
   {path:'',component:AuthUserComponent},
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path:'client',
   loadChildren:()=>import('./views/user/client/client.module').then((cl)=>cl.ClientModule)
   },
+<<<<<<< HEAD
   {path:'addSociete',
   loadChildren:()=>import('./views/user/societe/add-societe/add-societe.module').then((a)=>a.AddSocieteModule)
   },
@@ -55,6 +57,17 @@ const routes: Routes = [
   {path:'detailsSociete/:id',
   loadChildren:()=>import('./views/user/societe/details-societe/details-societe.module').then((a)=>a.DetailsSocieteModule)
   },
+=======
+  {path:'addClient',
+  loadChildren:()=>import('./views/user/client/add-client/add-client.module').then((m)=>m.AddClientModule)
+  },
+  {path:'detailsClient/:id',
+  loadChildren:()=>import('./views/user/client/details-client/details-client.module').then((m)=>m.DetailsClientModule)
+  },
+  {path:'updateClient/:id',
+  loadChildren:()=>import('./views/user/client/update-client/update-client.module').then((m)=>m.UpdateClientModule)
+  }
+>>>>>>> d5068128289dba2a2ddc8ea9db4c904379e335b7
 
   ]
 
