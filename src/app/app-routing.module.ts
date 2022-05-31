@@ -45,7 +45,16 @@ const routes: Routes = [
   },
   {path:'client',
   loadChildren:()=>import('./views/user/client/client.module').then((cl)=>cl.ClientModule)
-  }
+  },
+  {path:'addSociete',
+  loadChildren:()=>import('./views/user/societe/add-societe/add-societe.module').then((a)=>a.AddSocieteModule)
+  },
+  {path:'updateSociete/:id',
+  loadChildren:()=>import('./views/user/societe/update-societe/update-societe.module').then((a)=>a.UpdateSocieteModule)
+  },
+  {path:'detailsSociete/:id',
+  loadChildren:()=>import('./views/user/societe/details-societe/details-societe.module').then((a)=>a.DetailsSocieteModule)
+  },
 
   ]
 
