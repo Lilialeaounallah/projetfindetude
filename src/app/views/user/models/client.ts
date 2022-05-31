@@ -1,17 +1,19 @@
 export class Client {
+  id:number;
   civilite:string;
   nom:string;
   prenom:string;
   fonction:string;
   service:string;
+
   provenance:string;;
   ressource:string;
   agence:string;
   societe:string;
   etat_client:string;
+
   email:string;
   telephonne:string;
-
   adress:string;
   code_postal:string;
   ville:string;
@@ -20,6 +22,7 @@ export class Client {
   domaine:string;
   outils:string;
   constructor(
+    id:number,
     civilite:string,
   nom:string,
   prenom:string,
@@ -42,6 +45,7 @@ export class Client {
   outils:string
 
   ){
+    this.id=id;
     this.civilite=civilite;
     this.nom=nom;
     this.prenom=prenom;
