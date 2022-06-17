@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Besoin } from '../models/besoin';
+import { Besoin } from '../models/model-get/besoin';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ constructor(private _httpClient:HttpClient) {
  }
 
 
-  getAllBesoin(): Observable<Besoin[]>{
-    console.log(this.besointUrl);
-    return this._httpClient.get<Besoin[]>(this.besointUrl);
-  }
+ getAllBesoin(): Observable<Besoin[]>{
+  console.log(this.besointUrl);
+  return this._httpClient.get<Besoin[]>(this.besointUrl);
+}
 }

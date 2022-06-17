@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ProjetRoutingModule } from './projet-routing.module';
 import { ProjetComponent } from './projet.component';
+import { AddProjetComponent } from './add-projet/add-projet.component';
 
 
 @NgModule({
   declarations: [
-    ProjetComponent
+    ProjetComponent,
+    AddProjetComponent
   ],
   imports: [
     CommonModule,

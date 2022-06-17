@@ -1,83 +1,115 @@
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
-
-    <!-- Header -->
-    <div class="w3-container" style="margin-top:80px" id="showcase">
-        <h5 class="w3-xxxlarge w3-text-red"><b>Projet</b></h5>
-        <hr style="width:50px;border:3px solid red" class="w3-round">
-    </div>
-    <div class="card" style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px;">
-        <form action="/action_page.php" target="_blank">
-            <div class="w3-section">
-                <h2>Recherche</h2>
-                <input class="w3-input w3-border" type="text" name="Recherche" placeholder="réfrence du projet" required>
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">
+                <h2 style="color: white;">Tous les projets</h2>
             </div>
-
-            <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">chercher</button>
-        </form>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" routerLink="/home">home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" routerLink="/projet">projet</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">liste projets</li>
+        </ol>
     </div>
-    <br>
-    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-        <h2>Tous les projets</h2>
-        <div class="w3-responsive ">
-            <table class="w3-table-all ">
-                <tr>
-                    <th scope="col ">titre</th>
-                    <th scope="col ">titre besoin</th>
-                    <th scope="col ">client</th>
-                    <th scope="col ">sociétè</th>
-                    <th scope="col ">candidat</th>
-                    <th scope="col ">état positionnement</th>
-                    <th scope="col ">état projet</th>
-                    <th scope="col ">discription</th>
-                    <th scope="col ">domaine</th>
-                    <th scope="col ">devis</th>
-                    <th scope="col ">budet envisagegé</th>
-                    <th scope="col ">pondération</th>
-                    <th scope="col ">ca envisagé</th>
-                    <th scope="col ">ca pondéré</th>
-                    <th scope="col ">durée</th>
-                    <th scope="col ">date démarrage</th>
-                    <th scope="col ">date réponse</th>
-                    <th scope="col ">date clôture</th>
+</div>
+<ul class="nav nav-pills nav-pills-rose">
+    <li class="nav-item tab-all">
+        <button routerLink="/projet" class="button"><span>liste projets</span> </button>
+    </li>
 
-                    <th scope="col ">details</th>
-                    <th scope="col ">modifier</th>
+    <li class="nav-item tab-all">
+        <button routerLink="/addProjet" class="button"><span>ajouter projet</span></button>
+    </li>
+</ul>
+<div class="tab-content tab-space ">
+    <div class="tab-pane active show " id="tab1 ">
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="card-box ">
+                    <!--recherche sociétès-->
+                    <form class="search-form-opened" style="background-color: rgb(36, 33, 33);margin-left: 80%;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Chercher...">
 
-                </tr>
-                <tr>
+                            <span><a href="" class="btn submit">
+                        <i class="fa fa-search"></i> </a>
+                       </span>
+                        </div>
+                    </form>
+                    <!--recherche projets-->
+                    <div class="card-head ">
+                        <button id="panel-button " class="mdl-button mdl-js-button mdl-button--icon pull-right " data-upgraded=",MaterialButton ">
+          <i class="material-icons ">more_vert</i>
+        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect " data-mdl-for="panel-button ">
+                            <li class="mdl-menu__item "><i class="material-icons ">assistant_photo</i>Action</li>
+                            <li class="mdl-menu__item "><i class="material-icons ">print</i>Another action
+                            </li>
+                            <li class="mdl-menu__item "><i class="material-icons ">favorite</i>Something else here</li>
+                        </ul>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-scrollable ">
+                            <table class="table table-hover table-checkable order-column full-width " id="example4 ">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="center ">nom_societe</th>
+                                        <th class="center ">titre_besoin</th>
+                                        <th class="center ">candidat_nom</th>
+                                        <th class="center ">candidat_prenom</th>
+                                        <th class="center "> client_nom</th>
+                                        <th class="center ">client_prenom</th>
+                                        <th class="center ">etat_positionnement</th>
+                                        <th class="center ">etat_projet</th>
+                                        <th class="center ">commentaire</th>
+                                        <th class="center "> Action </th>
 
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>FFFFFFFFF</td>
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>FFFFFFFFF</td>
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>AAAAAAAAA</td>
-                    <td> <button type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
-            <span class="glyphicon glyphicon-list "></span> detail
-          </button>
-                    </td>
-                    <td>
-                        <button type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
-              <span class="glyphicon glyphicon-check "></span> modifier
-            </button>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX " *ngFor="let projet of projets">
+                                        <td class="user-circle-img sorting_1 ">
+                                            <img src="../../assets/img/user/user1.jpg " alt=" ">
+                                        </td>
+                                        <!--debut contenu  forms data-->
 
-                </tr>
 
-            </table>
+                                        <td>{{projet.nom_societe}}</td>
+                                        <td>{{projet.titre_besoin}}</td>
+                                        <td>{{projet.candidat_nom}}</td>
+                                        <td>{{projet.candidat_prenom}}</td>
+                                        <td>{{projet. client_nom}}</td>
+                                        <td>{{projet.client_prenom}}</td>
+                                        <td>{{projet.etat_positionnement}}</td>
+                                        <td>{{projet.etat_projet}}</td>
+                                        <td>{{projet.commentaire}}</td>
+                                        <!--fin contenu forms data-->
+
+                                        <td class="center ">
+                                            <a href="# " class="btn btn-tbl-edit btn-xs ">
+                                                <i class="fa fa-pencil "></i>
+                                            </a>
+                                            <a class="btn btn-tbl-delete btn-xs ">
+                                                <i class="fa fa-trash-o "></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
+
     <!-- End page content -->
 </div>

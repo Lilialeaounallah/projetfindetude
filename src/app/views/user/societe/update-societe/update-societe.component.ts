@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Societe } from '../../models/societe';
+import { Societe } from '../../models/model-get/societe';
 
 @Component({
   selector: 'app-update-societe',
@@ -7,7 +7,7 @@ import { Societe } from '../../models/societe';
   styleUrls: ['./update-societe.component.css']
 })
 export class UpdateSocieteComponent implements OnInit {
-  societe: Societe = new Societe('',0,',',',','','',0,'','',0,'','','','','','','','')
+  societe: Societe = new Societe(0,'',0,'','',0,'','',0,'','','','','','',0,0,0)
 
   constructor() { }
 

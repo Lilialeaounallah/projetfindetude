@@ -1,113 +1,131 @@
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
-
-    <!-- Header -->
-    <div class="w3-container" style="margin-top:80px" id="showcase">
-        <h5 class="w3-xxxlarge w3-text-red"><b>Candidat</b>
-        </h5>
-        <hr style=" width:50px;border:3px solid red " class="w3-round ">
-    </div>
-
-    <div class="card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-        <form action=" " target="_blank ">
-            <div class="w3-section ">
-                <h2>Recherche</h2>
-                <input class="w3-input w3-border " type="text " name="Recherche " placeholder="réfèrence du candidat " required>
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">
+                <h2 style="color: white;">Tous les candidats</h2>
             </div>
-
-            <button type="submit " class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom ">chercher</button>
-
-
-        </form>
-
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" routerLink="/home">home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" routerLink="/candidat">candidat</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">liste candidats</li>
+        </ol>
     </div>
-    <br>
-    <div class="card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-        <div class="w3-row-padding w3-grayscale">
-            <div class="w3-col m4 w3-margin-bottom"></div>
-            <div class="w3-col m4 w3-margin-bottom"></div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div>
-                    <div class="w3-container ">
-                        <div>
-                            <a routerLink="/addCandidat" style="font-size: 20px; color: #f0372a!important;" class="btn">
-                                + créer un candidat
+</div>
 
-                                </a>
+<ul class="nav nav-pills nav-pills-rose">
+    <li class="nav-item tab-all">
+        <button routerLink="/candidat" class="button"><span>liste candidats</span> </button>
+    </li>
+
+    <li class="nav-item tab-all">
+        <button routerLink="/addCandidat" class="button"><span>ajouter candidat</span></button>
+    </li>
+</ul>
+
+<div class="tab-content tab-space ">
+    <div class="tab-pane active show " id="tab1 ">
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="card-box ">
+                    <!--recherche candidat-->
+                    <form class="search-form-opened" style="background-color: rgb(36, 33, 33);margin-left: 80%;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Chercher...">
+
+                            <span><a href="" class="btn submit">
+                      <i class="fa fa-search"></i> </a>
+                     </span>
                         </div>
+                    </form>
+                    <!--recherche candidat-->
+                    <div class="card-head ">
+                        <button id="panel-button " class="mdl-button mdl-js-button mdl-button--icon pull-right " data-upgraded=",MaterialButton ">
+        <i class="material-icons ">more_vert</i>
+      </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect " data-mdl-for="panel-button ">
+                            <li class="mdl-menu__item "><i class="material-icons ">assistant_photo</i>Action</li>
+                            <li class="mdl-menu__item "><i class="material-icons ">print</i>Another action
+                            </li>
+                            <li class="mdl-menu__item "><i class="material-icons ">favorite</i>Something else here</li>
+                        </ul>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-scrollable ">
+                            <table class="table table-hover table-checkable order-column full-width " id="example4 ">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="center ">civilité</th>
+                                        <th class="center ">nom</th>
+                                        <th class="center ">prénom</th>
+                                        <th class="center ">Date_de_naissance</th>
+                                        <th class="center ">email</th>
+                                        <th class="center ">telephonne</th>
+                                        <th class="center ">adress</th>
+                                        <th class="center ">ville</th>
+                                        <th class="center ">code postal</th>
+                                        <th class="center ">pays</th>
+                                        <th class="center ">etat condidat</th>
+                                        <th class="center ">provenance</th>
+                                        <th class="center ">disponibllité</th>
+                                        <th class="center ">mobilité</th>
+                                        <th class="center ">responsable manager</th>
+                                        <th class="center ">agence</th>
+                                        <th class="center ">evaluation</th>
+                                        <th class="center "> Action </th>
 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX " *ngFor="let condidat of candidats">
+                                        <td class="user-circle-img sorting_1 ">
+                                            <img src="../../assets/img/user/user1.jpg " alt=" ">
+                                        </td>
+                                        <!--debut contenu  forms data-->
+
+
+                                        <td>{{condidat.civilite}}</td>
+                                        <td>{{condidat.nom}}</td>
+                                        <td>{{condidat.prenom}}</td>
+                                        <td>{{condidat.Date_de_naissance}}</td>
+                                        <td>{{condidat.email}}</td>
+                                        <td>{{condidat.telephonne}}</td>
+                                        <td>{{condidat.adress}}</td>
+                                        <td>{{condidat.ville}}</td>
+                                        <td>{{condidat.code_postal}}</td>
+                                        <td>{{condidat.pays}}</td>
+                                        <td>{{condidat.libellet}}</td>
+                                        <td>{{condidat.provenance}}</td>
+                                        <td>dans 3 mois</td>
+                                        <td>Ile de france</td>
+                                        <td>{{condidat.responsable_manager}}</td>
+                                        <td>{{condidat.agence}}</td>
+                                        <td>{{condidat.evaluation}}</td>
+                                        <!--fin contenu forms data-->
+
+                                        <td class="center ">
+                                            <a href="# " class="btn btn-tbl-edit btn-xs ">
+                                                <i class="fa fa-pencil "></i>
+                                            </a>
+                                            <a class="btn btn-tbl-delete btn-xs ">
+                                                <i class="fa fa-trash-o "></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-        <h2>Tous les candidats</h2>
-        <div class="w3-responsive ">
-            <table class="w3-table-all ">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">civilité</th>
-                    <th scope="col">nom</th>
-                    <th scope="col">prénom</th>
-                    <th scope="col">Date_de_naissance</th>
-                    <th scope="col">email</th>
-                    <th scope="col">telephonne</th>
-                    <th scope="col">adress</th>
-                    <th scope="col">ville</th>
-                    <th scope="col">code postal</th>
-                    <th scope="col">pays</th>
-                    <th scope="col">etat condidat</th>
-                    <th scope="col">provenance</th>
-                    <th scope="col">disponibllité</th>
-                    <th scope="col">mobilité</th>
-                    <th scope="col">responsable manager</th>
-                    <th scope="col">agence</th>
-                    <th scope="col">evaluation</th>
-                    <th scope="col ">details</th>
-                    <th scope="col ">modifier</th>
-                </tr>
-
-                <tr *ngFor="let condidat of candidats">
-                    <th scope="row">+</th>
-                    <td>{{condidat.civilite}}</td>
-                    <td>{{condidat.nom}}</td>
-                    <td>{{condidat.prenom}}</td>
-                    <td>{{condidat.Date_de_naissance}}</td>
-                    <td>{{condidat.email}}</td>
-                    <td>{{condidat.telephonne}}</td>
-                    <td>{{condidat.adress}}</td>
-                    <td>{{condidat.ville}}</td>
-                    <td>{{condidat.code_postal}}</td>
-                    <td>{{condidat.pays}}</td>
-                    <td>{{condidat.libellet}}</td>
-                    <td>{{condidat.provenance}}</td>
-                    <td>dans 3 mois</td>
-                    <td>Ile de france</td>
-                    <td>{{condidat.responsable_manager}}</td>
-                    <td>{{condidat.agence}}</td>
-                    <td>{{condidat.evaluation}}</td>
-                    <td>
-                        <button routerLink="/detailsCandidat/{{condidat.id}} " type=" button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
-                      <span class="glyphicon glyphicon-list "></span> detail
-                    </button>
-                    </td>
-                    <td>
-                        <button routerLink="/updateCandidat/{{condidat.id}} " type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
-                        <span class="glyphicon glyphicon-check "></span> modifier
-                      </button>
-
-                </tr>
-
-            </table>
-        </div>
-    </div>
 </div>
-
-
-
-
-
-
-<!-- End page content -->
+<div><span></span></div>
+<div><span></span></div>
+<div><span></span></div>
+<div><span></span></div>

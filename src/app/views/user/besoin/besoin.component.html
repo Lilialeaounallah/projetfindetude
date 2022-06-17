@@ -1,111 +1,129 @@
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
-
-    <!-- Header -->
-    <div class="w3-container" style="margin-top:80px" id="showcase">
-        <h5 class="w3-xxxlarge w3-text-red"><b>Besoin</b></h5>
-        <hr style="width:50px;border:3px solid red" class="w3-round">
-    </div>
-
-    <div class="card" style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px;">
-        <form action="" target="_blank">
-            <div class="w3-section">
-                <h2>Recherche</h2>
-                <input class="w3-input w3-border" type="text" name="Recherche" placeholder="nom du besoin" required>
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">
+                <h2 style="color: white;">Tous les besoins</h2>
             </div>
-            <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">chercher</button>
-        </form>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" routerLink="/home">home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" routerLink="/besoin">besoin</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">liste besoins</li>
+        </ol>
     </div>
+</div>
 
-    <br>
-    <div class="card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-        <div class="w3-row-padding w3-grayscale">
-            <div class="w3-col m4 w3-margin-bottom"></div>
-            <div class="w3-col m4 w3-margin-bottom"></div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div>
-                    <div class="w3-container ">
-                        <div>
-                            <h3 style="font-size: 20px; color: #f0372a!important;">
-                                + créer une besoin
+<ul class="nav nav-pills nav-pills-rose">
+    <li class="nav-item tab-all">
+        <button routerLink="/besoin" class="button"><span>liste besoins</span> </button>
+    </li>
 
-                            </h3>
+    <li class="nav-item tab-all">
+        <button routerLink="/add-besoin" class="button"><span>ajouter besoin</span></button>
+    </li>
+</ul>
+
+<div class="tab-content tab-space ">
+    <div class="tab-pane active show " id="tab1 ">
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="card-box ">
+                    <!--recherche besoin-->
+                    <form class="search-form-opened" style="background-color: rgb(36, 33, 33);margin-left: 80%;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Chercher...">
+
+                            <span><a href="" class="btn submit">
+                        <i class="fa fa-search"></i> </a>
+                       </span>
                         </div>
+                    </form>
+                    <!--recherche besoin-->
+                    <div class="card-head ">
+                        <button id="panel-button " class="mdl-button mdl-js-button mdl-button--icon pull-right " data-upgraded=",MaterialButton ">
+          <i class="material-icons ">more_vert</i>
+        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect " data-mdl-for="panel-button ">
+                            <li class="mdl-menu__item "><i class="material-icons ">assistant_photo</i>Action</li>
+                            <li class="mdl-menu__item "><i class="material-icons ">print</i>Another action
+                            </li>
+                            <li class="mdl-menu__item "><i class="material-icons ">favorite</i>Something else here</li>
+                        </ul>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-scrollable ">
+                            <table class="table table-hover table-checkable order-column full-width " id="example4 ">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="center ">titre</th>
+                                        <th class="center ">réfèrence besoin</th>
+                                        <th class="center ">nom client</th>
+                                        <th class="center ">nom sociétè</th>
+                                        <th class="center ">état besoin</th>
+                                        <th class="center ">étape besoin</th>
+                                        <th class="center ">discription</th>
+                                        <th class="center ">domaine</th>
+                                        <th class="center ">devis</th>
+                                        <th class="center ">budet envisagegé</th>
+                                        <th class="center ">pondération</th>
+                                        <th class="center ">ca envisagé</th>
+                                        <th class="center ">ca pondéré</th>
+                                        <th class="center ">durée</th>
+                                        <th class="center ">date démarrage</th>
+                                        <th class="center ">date réponse</th>
+                                        <th class="center ">date clôture</th>
+                                        <th class="center ">commentaire</th>
+                                        <th class="center "> Action </th>
 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX " *ngFor="let besoin of besoins">
+                                        <td class="user-circle-img sorting_1 ">
+                                            <img src="../../assets/img/user/user1.jpg " alt=" ">
+                                        </td>
+                                        <!--debut contenu  forms data-->
+
+
+                                        <td>{{besoin.titre}}</td>
+                                        <td>{{besoin.reference_besoin}}</td>
+                                        <td>{{besoin.nom_client}}</td>
+                                        <td>{{besoin.nom_societe}}</td>
+                                        <td>{{besoin.etat_besoin}}</td>
+                                        <td>{{besoin.type_besoin}}</td>
+                                        <td>{{besoin.discription}}</td>
+                                        <td>{{besoin.domaine}}</td>
+                                        <td>{{besoin.devis}}</td>
+                                        <td>{{besoin.budget_envisage}}</td>
+                                        <td>{{besoin.ponderation}}</td>
+                                        <td>{{besoin.ca_envisage}}</td>
+                                        <td>{{besoin.ca_pondere}}</td>
+                                        <td>{{besoin.duree}}</td>
+                                        <td>{{besoin.date_demarrage}}</td>
+                                        <td>{{besoin.date_cloture}}</td>
+                                        <td>{{besoin.date_reponse}}</td>
+                                        <td>{{besoin.commentaire}}</td>
+                                        <!--fin contenu forms data-->
+
+                                        <td class="center ">
+                                            <a href="# " class="btn btn-tbl-edit btn-xs ">
+                                                <i class="fa fa-pencil "></i>
+                                            </a>
+                                            <a class="btn btn-tbl-delete btn-xs ">
+                                                <i class="fa fa-trash-o "></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-        <h2>toutes les besoin</h2>
-        <div class="w3-responsive ">
-            <table class="w3-table-all ">
-                <tr>
-                    <th scope="col ">titre</th>
-                    <th scope="col ">réfèrence besoin</th>
-                    <th scope="col ">client</th>
-                    <th scope="col ">sociétè</th>
-                    <th scope="col ">état besoin</th>
-                    <th scope="col ">étape besoin</th>
-                    <th scope="col ">discription</th>
-                    <th scope="col ">domaine</th>
-                    <th scope="col ">devis</th>
-                    <th scope="col ">budet envisagegé</th>
-                    <th scope="col ">pondération</th>
-                    <th scope="col ">ca envisagé</th>
-                    <th scope="col ">ca pondéré</th>
-                    <th scope="col ">durée</th>
-                    <th scope="col ">date démarrage</th>
-                    <th scope="col ">date réponse</th>
-                    <th scope="col ">date clôture</th>
-                    <th scope="col ">commentaire</th>
-
-                    <th scope="col ">details</th>
-                    <th scope="col ">modifier</th>
-
-                </tr>
-                <tr>
-
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>FFFFFFFFF</td>
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>FFFFFFFFF</td>
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>AAAAAAAAA</td>
-                    <td> <button type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
-                        <span class="glyphicon glyphicon-list "></span> detail
-                      </button>
-                    </td>
-                    <td>
-                        <button type="button " class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
-                          <span class="glyphicon glyphicon-check "></span> modifier
-                        </button>
-
-                </tr>
-
-            </table>
-        </div>
-    </div>
-
-
-
-
-
-
-
-    <!-- End page content -->
 </div>

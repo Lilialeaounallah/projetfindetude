@@ -1,108 +1,128 @@
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
-
-    <!-- Header -->
-    <div class="w3-container" style="margin-top:80px" id="showcase">
-        <h5 class="w3-xxxlarge w3-text-red"><b>Sociétè</b></h5>
-        <hr style="width:50px;border:3px solid red" class="w3-round">
-    </div>
-    <div class="card" style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px;">
-        <form action="/action_page.php" target="_blank">
-            <div class="w3-section">
-                <h2>Recherche</h2>
-                <input class="w3-input w3-border" type="text" name="Recherche" placeholder="nom de la sociétè" required>
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class=" pull-left">
+            <div class="page-title">
+                <h2 style="color: white;">Tous les sociétès</h2>
             </div>
-
-            <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">chercher</button>
-        </form>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" routerLink="/home">home</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li><a class="parent-item" routerLink="/societe">sociétè</a>&nbsp;<i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">liste sociétès</li>
+        </ol>
     </div>
-    <br>
-    <div class="card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-        <div class="w3-row-padding w3-grayscale">
-            <div class="w3-col m4 w3-margin-bottom"></div>
-            <div class="w3-col m4 w3-margin-bottom"></div>
-            <div class="w3-col m4 w3-margin-bottom">
-                <div>
-                    <div class="w3-container ">
-                        <div>
-                            <a routerLink="/addSociete" style="font-size: 20px; color: #f0372a!important;">
-                                +créer une sociétè
+</div>
+<ul class="nav nav-pills nav-pills-rose">
+    <li class="nav-item tab-all">
+        <button routerLink="/societe" class="button"><span>liste sociétès</span> </button>
+    </li>
 
-                            </a>
+    <li class="nav-item tab-all">
+        <button routerLink="/addSociete" class="button"><span>ajouter sociétè</span></button>
+    </li>
+</ul>
+<div class="tab-content tab-space ">
+    <div class="tab-pane active show " id="tab1 ">
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="card-box ">
+                    <!--recherche sociétès-->
+                    <form class="search-form-opened" style="background-color: rgb(36, 33, 33);margin-left: 80%;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Chercher...">
+
+                            <span><a href="" class="btn submit">
+                          <i class="fa fa-search"></i> </a>
+                         </span>
                         </div>
+                    </form>
+                    <!--recherche sociétès-->
+                    <div class="card-head ">
+                        <button id="panel-button " class="mdl-button mdl-js-button mdl-button--icon pull-right " data-upgraded=",MaterialButton ">
+            <i class="material-icons ">more_vert</i>
+          </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect " data-mdl-for="panel-button ">
+                            <li class="mdl-menu__item "><i class="material-icons ">assistant_photo</i>Action</li>
+                            <li class="mdl-menu__item "><i class="material-icons ">print</i>Another action
+                            </li>
+                            <li class="mdl-menu__item "><i class="material-icons ">favorite</i>Something else here</li>
+                        </ul>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-scrollable ">
+                            <table class="table table-hover table-checkable order-column full-width " id="example4 ">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="center ">nom</th>
+                                        <th class="center ">effectifs</th>
+                                        <th class="center ">sociétè mére</th>
+                                        <th class="center ">agence</th>
+                                        <th class="center ">télèphonne</th>
+                                        <th class="center ">site web </th>
+                                        <th class="center ">adress</th>
+                                        <th class="center ">code postal</th>
+                                        <th class="center ">ville</th>
+                                        <th class="center ">pays</th>
+                                        <th class="center ">statut juridique</th>
+                                        <th class="center ">tva ic</th>
+                                        <th class="center ">siret</th>
+                                        <th class="center ">code ape</th>
+                                        <th class="center ">ressource</th>
+                                        <th class="center ">secteur</th>
+                                        <th class="center ">provenance</th>
+                                        <th class="center "> Action </th>
 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX " *ngFor="let societe of societes">
+                                        <td class="user-circle-img sorting_1 ">
+                                            <img src="../../assets/img/user/user1.jpg " alt=" ">
+                                        </td>
+                                        <!--debut contenu  forms data-->
+
+
+                                        <td>{{societe.nom}}</td>
+                                        <td>{{societe.effectif}}</td>
+                                        <td>{{societe.societe_mere}}</td>
+                                        <td>{{societe.agence}}</td>
+                                        <td>{{societe.telephonne}}</td>
+                                        <td>{{societe.site_web}}</td>
+                                        <td>{{societe.adress}}</td>
+                                        <td>{{societe.code_postal}}</td>
+                                        <td>{{societe.ville}}</td>
+                                        <td>{{societe.pays}}</td>
+                                        <td>{{societe.statut_juridique}}</td>
+                                        <td>{{societe.tva_ic}}</td>
+                                        <td>{{societe.siret}}</td>
+                                        <td>{{societe.code_ape}}</td>
+                                        <td>{{societe.ressource}}</td>
+                                        <td>{{societe.secteur}}</td>
+                                        <td>{{societe.provenance}}</td>
+                                        <!--fin contenu forms data-->
+
+                                        <td class="center ">
+                                            <a href="# " class="btn btn-tbl-edit btn-xs ">
+                                                <i class="fa fa-pencil "></i>
+                                            </a>
+                                            <a class="btn btn-tbl-delete btn-xs ">
+                                                <i class="fa fa-trash-o "></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-        <h2>
-            toutes les sociétés</h2>
-        <div class="w3-responsive ">
-            <table class="w3-table-all ">
-                <tr>
-
-                    <th scope="col ">nom</th>
-                    <th scope="col ">effectifs</th>
-                    <th scope="col ">sociétè mére</th>
-                    <th scope="col ">secteur</th>
-                    <th scope="col ">provenance</th>
-                    <th scope="col ">agence</th>
-                    <th scope="col ">télèphonne</th>
-                    <th scope="col ">site web </th>
-                    <th scope="col ">adress</th>
-                    <th scope="col ">code postal</th>
-                    <th scope="col ">ville</th>
-                    <th scope="col ">pays</th>
-                    <th scope="col ">statut juridique</th>
-                    <th scope="col ">tva ic</th>
-                    <th scope="col ">siret</th>
-                    <th scope="col ">code ape</th>
-                    <th scope="col ">numero fornisseur</th>
-                    <th scope="col ">etat sociétè</th>
-                    <th scope="col ">ressource</th>
-                    <th scope="col ">details</th>
-                    <th scope="col ">modifier</th>
-                </tr>
-                <tr>
-
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>FFFFFFFFF</td>
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>FFFFFFFFF</td>
-                    <td>AAAAAAAAA</td>
-                    <td>BBBBBBBBB</td>
-                    <td>CCCCCCCCC</td>
-                    <td>DDDDDDDDD</td>
-                    <td>EEEEEEEEE</td>
-                    <td>FFFFFFFFF</td>
-                    <td>AAAAAAAAA</td>
-                    <td> <button type="button " routerLink="/detailsSociete/1"  class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
-                  <span class="glyphicon glyphicon-list "></span> detail
-                </button>
-                    </td>
-                    <td>
-                        <button type="button " routerLink="/updateSociete/1" class="btn btn-default btn-sm " style="background-color:rgb(235, 210, 129); ">
-                    <span class="glyphicon glyphicon-check "></span> modifier
-                  </button>
-
-                </tr>
-
-            </table>
-        </div>
-    </div>
-
-
 
 
 

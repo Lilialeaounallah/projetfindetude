@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './cors/admin/admin.component';
 import { AuthUserComponent } from './cors/auth-user/auth-user.component';
 import { UserComponent } from './cors/user/user.component';
-import { ClientModule } from './views/user/client/client.module';
 
 const routes: Routes = [
   {path:'',component:AuthUserComponent},
@@ -19,6 +18,17 @@ const routes: Routes = [
   {path:'besoin',
   loadChildren:()=>import('./views/user/besoin/besoin.module').then((b)=>b.BesoinModule)
   },
+  {path:'add-besoin',
+  loadChildren:()=>import('./views/user/besoin/add-besoin/add-besoin.module').then((b)=>b.AddBesoinModule)
+  },
+
+
+
+
+
+
+
+
   {path:'candidat',
   loadChildren:()=>import('./views/user/candidat/candidat.module').then((c)=>c.CandidatModule)
   },
@@ -35,12 +45,28 @@ const routes: Routes = [
   {path:'positionnement',
   loadChildren:()=>import('./views/user/positionnement/positionnement.module').then((po)=>po.PositionnementModule)
   },
+  {path:'add-positionnement',
+  loadChildren:()=>import('./views/user/positionnement/add-positionnement/add-positionnement.module').then((po)=>po.AddPositionnementModule)
+  },
   {path:'projet',
   loadChildren:()=>import('./views/user/projet/projet.module').then((pro)=>pro.ProjetModule)
   },
+  {path:'addProjet',
+  loadChildren:()=>import('./views/user/projet/add-projet/add-projet.module').then((pro)=>pro.AddProjetModule)
+  },
+
+
   {path:'ressource',
   loadChildren:()=>import('./views/user/ressource/ressource.module').then((r)=>r.RessourceModule)
   },
+  {path:'addRessource',
+  loadChildren:()=>import('./views/user/ressource/add-ressource/add-ressource.module').then((r)=>r.AddRessourceModule)
+  },
+
+
+
+
+
   {path:'societe',
   loadChildren:()=>import('./views/user/societe/societe.module').then((s)=>s.SocieteModule)
   },

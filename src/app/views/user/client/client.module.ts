@@ -12,9 +12,10 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ClientComponent,
-    AddClientComponent,
     UpdateClientComponent,
-    DetailsClientComponent
+    DetailsClientComponent,
+    AddClientComponent
+
   ],
   imports: [
     CommonModule,

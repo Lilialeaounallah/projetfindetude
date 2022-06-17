@@ -1,152 +1,177 @@
-<!-- Photo grid (modal) -->
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="card-head">
+                <h2 style="color: white;">Ajouter client</h2>
+                <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+          <i class="material-icons">more_vert</i>
+        </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
+                    <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else here
+                    </li>
+                </ul>
+            </div>
+            <form #clientForm="ngForm" (ngSubmit)="ajout() ">
+                <div class="card-body row">
 
-    <!-- Header -->
-    <form #f="ngForm" (ngSubmit)="ajout(f)">
-
-        <div class="w3-row-padding">
-
-            <div class="w3-half">
-                <div class="w3-container" id="contact" style="margin-top:75px">
-                    <h1 class="w3-xxxlarge w3-text-red"><b>Créer un client.</b></h1>
-                    <hr style="width:50px;border:5px solid red" class="w3-round">
-                    <div class="card " style="background-color:  rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
 
 
-                        <div class="w3-section">
-                            <h2>information personelle</h2>
-                            <label>Civilité</label>
-                            <input class="w3-input w3-border" #civilite="ngModel" [(ngModel)]="client.civilite" type="text" name="Civilite" required>
+
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" id="txtLName" #civilite="ngModel" [(ngModel)]="Client.civilite " type="text " name="Civilite " required>
+                            <label class="mdl-textfield__label">Civilité</label>
                         </div>
-                        <div class="w3-section">
-                            <label>Name</label>
-                            <input class="w3-input w3-border" #name="ngModel" [(ngModel)]="client.nom" type="text" name="Name" required>
-                        </div>
-
-                        <div class="w3-section">
-                            <label>Prenom</label>
-                            <input class="w3-input w3-border" #prenom="ngModel" [(ngModel)]="client.prenom" type="text" name="Prenom" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>fonction</label>
-                            <input class="w3-input w3-border" #fonction="ngModel" [(ngModel)]="client.fonction" type="text" name="fonction" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Disponibilité</label>
-                            <input class="w3-input w3-border" #service="ngModel" [(ngModel)]="client.service" type="text" name="service" required>
-                        </div>
-                        <div class="w3-section ">
-                            <label>commentaire</label>
-                            <input class="w3-input w3-border " #commentaire="ngModel" [(ngModel)]="client.commentaire" type="text " name="commentaire " required>
-                        </div>
-
-
-
                     </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" id="txtsa1" #nom="ngModel" [(ngModel)]="Client.nom " name="nom " required>
+                            <label class="mdl-textfield__label">Nom</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #prenom="ngModel" [(ngModel)]="Client.prenom " name="prenom " required>
+                            <label class="mdl-textfield__label">Prenom</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #fonction="ngModel" [(ngModel)]="Client.fonction " name="fonction " required>
+                            <label class="mdl-textfield__label">Fonction</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #provenance="ngModel" [(ngModel)]="Client.provenance " name="provenance " required>
+                            <label class="mdl-textfield__label">Provenance</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #libellet_preciser="ngModel" [(ngModel)]="Client.libellet_preciser " name="libellet_preciser " required>
+                            <label class="mdl-textfield__label">plus de présision</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #ressource="ngModel" [(ngModel)]="Client.ressource " name="ressource " required>
+                            <label class="mdl-textfield__label">Ressource</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #agence="ngModel" [(ngModel)]="Client.agence " name="agence " required>
+                            <label class="mdl-textfield__label">Agence</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #societe="ngModel" [(ngModel)]="Client.societe " name="societe " required>
+                            <label class="mdl-textfield__label">Sociétè</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #etat_client="ngModel" [(ngModel)]="Client.etat_client " name="etat_client " required>
+                            <label class="mdl-textfield__label">Etat client</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="email" #email="ngModel" [(ngModel)]="Client.email " name="email " required>
+                            <label class="mdl-textfield__label">Email</label>
+                            <span class="mdl-textfield__error">Enter Valid Email Address!</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #telephonne="ngModel" [(ngModel)]="Client.telephonne " name="telephonne " required>
+                            <label class="mdl-textfield__label">Telephonne</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #adress="ngModel" [(ngModel)]="Client.adress " name="adress " required>
+                            <label class="mdl-textfield__label">Adress</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #code_postal="ngModel" [(ngModel)]="Client.code_postal " name="code_postal " required>
+                            <label class="mdl-textfield__label">Code postal</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #ville="ngModel" [(ngModel)]="Client.ville " name="ville " required>
+                            <label class="mdl-textfield__label">Ville</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #pays="ngModel" [(ngModel)]="Client.pays " name="pays " required>
+                            <label class="mdl-textfield__label">Pays</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #libellet_comentaire="ngModel" [(ngModel)]="Client.libellet_comentaire " name="libellet_comentaire " required>
+                            <label class="mdl-textfield__label">Commentaire</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #domaine="ngModel" [(ngModel)]="Client.domaine " name="domaine " required>
+                            <label class="mdl-textfield__label">Domaine</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #domaine="ngModel" [(ngModel)]="Client.domaine " name="domaine " required>
+                            <label class="mdl-textfield__label">Domaine</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                            <input class="mdl-textfield__input" type="text" #outils="ngModel" [(ngModel)]="Client.outils " name="outils " required>
+                            <label class="mdl-textfield__label">Outils</label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width mdl-textfield--file">
+                            <input class="mdl-textfield__input" placeholder="Attacher un document" type="text" id="uploadFile">
+                            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                <i class="material-icons">attach_file</i><input type="file" id="uploadBtn">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 p-t-20">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width mdl-textfield--file">
+                            <input class="mdl-textfield__input" placeholder="Attacher un autre document" type="text" id="uploadLicence">
+                            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                <i class="material-icons">attach_file</i><input type="file" id="uploadBtnLicence">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 p-t-20 text-center">
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
+                    </div>
+
+
 
                 </div>
-
-            </div>
-
-            <div class="w3-half">
-                <div class="w3-container" id="contact" style="margin-top:75px">
-                    <br>
-                    <br>
-                    <br><br><br><br>
-                    <div class="card " style="background-color:  rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-
-                        <div class="w3-section">
-                            <h2>Coordonnées</h2>
-                            <label>email</label>
-                            <input class="w3-input w3-border" #email="ngModel" [(ngModel)]="client.email" type="text" name="Email" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Telephonne</label>
-                            <input class="w3-input w3-border" #telephonne="ngModel" [(ngModel)]="client.telephonne" type="number" name="Telephonne" required>
-                        </div>
-
-                        <div class="w3-section">
-                            <label>Adress</label>
-                            <input class="w3-input w3-border" #adress="ngModel" [(ngModel)]="client.adress" type="text" name="Adress" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Ville</label>
-                            <input class="w3-input w3-border" #ville="ngModel" [(ngModel)]="client.ville" type="text" name="Ville" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Code postal</label>
-                            <input class="w3-input w3-border" #code_postal="ngModel" [(ngModel)]="client.code_postal" type="number" name="code" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>pays</label>
-                            <input class="w3-input w3-border" #pays="ngModel" [(ngModel)]="client.pays" type="text" name="pays" required>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w3-container" id="contact" style="margin-top:75px">
-                <div class="w3-container" id="contact" style="margin-top:40px">
-                    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-
-                        <div class="w3-section ">
-                            <h2>Etat client</h2>
-                            <label>etat client</label>
-                            <input class="w3-input w3-border " #etat_client="ngModel" [(ngModel)]="client.etat_client" type="text " name="etat " required>
-                        </div>
-
-                        <div class="w3-section ">
-                            <label>Provenance</label>
-                            <input class="w3-input w3-border " #provenance="ngModel" [(ngModel)]="client.provenance" type="number " name="code " required>
-                        </div>
-
-                        <div class="w3-section ">
-                            <label>Responsable manager</label>
-                            <input class="w3-input w3-border " #ressourc="ngModel" [(ngModel)]="client.ressource" type="text " name="Ressource " required>
-                        </div>
-                        <div class="w3-section ">
-                            <label>Agence</label>
-                            <input class="w3-input w3-border " #agence="ngModel" [(ngModel)]="client.agence" type="text " name="Agence " required>
-                        </div>
-                        <div class="w3-section ">
-                            <label>Commentaire</label>
-                            <input class="w3-input w3-border " #commentaire="ngModel" [(ngModel)]="client.commentaire" type="textarea" name=" Commentaire" class="form-control " rows="3 " required>
-                        </div>
-
-                    </div>
-                    <br>
-                    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-                        <div class="w3-section ">
-                            <h2>Société</h2>
-                            <label>sociétè</label>
-                            <input class="w3-input w3-border " #societe="ngModel" [(ngModel)]="client.societe" type="text " name="societe " required>
-                        </div>
-
-                        <div class="w3-section ">
-                            <label>domaine</label>
-                            <input class="w3-input w3-border " #domaine="ngModel" [(ngModel)]="client.domaine" type="number " name="domaine " required>
-                        </div>
-
-                        <div class="w3-section ">
-                            <label>outils</label>
-                            <input class="w3-input w3-border " #outils="ngModel" [(ngModel)]="client.outils" type="text " name="outils " required>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-
+            </form>
         </div>
-
-
-
-        <button type="submit " class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom ">Créer
-      client</button>
-    </form>
-
-
-
+    </div>
 </div>

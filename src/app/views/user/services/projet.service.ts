@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Projet } from '../models/projet';
+import { Projet } from '../models/model-get/projet';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class ProjetService {
    }
 
 
-    getAllPositionnement(): Observable<Projet[]>{
+    getAllProjet(): Observable<Projet[]>{
       console.log(this.ProjetUrl);
       return this._httpClient.get<Projet[]>(this.ProjetUrl);
     }

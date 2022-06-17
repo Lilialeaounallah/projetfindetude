@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
-import { Client } from '../../models/client';
+import { Router } from '@angular/router';
+import { Clientinsert } from '../../models/model-insert/clientinsert';
 import { ClientService } from '../../services/client.service';
 
 @Component({
@@ -9,25 +11,20 @@ import { ClientService } from '../../services/client.service';
 })
 export class AddClientComponent implements OnInit {
 
-  client: Client=new Client(0,'','','','','','','','','','','','','','','','','','','');
-  constructor(private clientService : ClientService) {
-  }
+  Client = new Clientinsert ('','','','','',0,'',0,'',0,0,'','','','','','','',0,0)
+  constructor(private _serviceClient:ClientService,private router:Router) { }
+
 
   ngOnInit(): void {
   }
-  ajout(f:any){
 
-    // call api and add send it to backends
-
-    console.log("client ",this.client);
-    this.clientService.addClient(this.client).subscribe(data=>{
-      console.log("candidat added successfully", data);
-
-    },err=>{
-      console.log("Error",err)
-    })
-
-
+  ajout(){
+ this._serviceClient.AddClient(this.Client).subscribe()
+ this.router.navigate(['/']);
   }
+
+  redirect(){
+    this.router.navigate(['/src/app/views/user/client/add-client']);
+}
 
 }

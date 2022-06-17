@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Client } from '../../models/client';
+import { Client } from '../../models/model-get/client';
 
 @Component({
   selector: 'app-update-client',

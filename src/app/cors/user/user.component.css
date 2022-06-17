@@ -1,26 +1,10 @@
-h2 {
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 20px;
-}
+            .octopus {
+                float: left;
+                top: 2px;
+                height: 55px;
+                width: 180px;
+            }
 
-h3 {
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 20px;
-}
-.img-profile{
-    height: 50px;
-    width: 50px;
-}
-
-.nav-fix {
-    position: fixed;
-    /* Set the navbar to fixed position */
-    top: 0;
-    /* Position the navbar at the top of the page */
-    width: 100%;
-}
-
-.logo-img {
-    width: 200px;
-    height: 58px;
-}
+            a {
+                color: orange
+            }

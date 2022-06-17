@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PositionnementService } from '../services/positionnement.service';
+import {  Positionnement as PositionnementModel  } from '../models/model-get/Positionnement';
 
 @Component({
   selector: 'app-positionnement',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PositionnementComponent implements OnInit {
 
-  constructor() { }
+  positionnements!: PositionnementModel[];
 
-  ngOnInit(): void {
+  constructor(private _positionnementService:PositionnementService) {
+
+
   }
 
+  ngOnInit(): void {
+    this.getAllPositionnement();
+  }
+  getAllPositionnement()  {
+
+    this._positionnementService.getAllPositionnement().subscribe((data: PositionnementModel[])=>{
+      this.positionnements=data;
+      console.log("Positionnement!!  ",this.positionnements);
+    },(err: any)=>{
+      console.log("ERROR",err);
+    })
+  }
 }

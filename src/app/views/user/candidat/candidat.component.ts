@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{Candidat} from '../models/candidat'
+import{Candidat} from '../models/model-get/candidat';
 import { CandidatService } from '../services/candidat.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { CandidatService } from '../services/candidat.service';
   styleUrls: ['./candidat.component.css']
 })
 export class CandidatComponent implements OnInit {
-  candidats!:Candidat[];
+  candidats!: Candidat[];
 
   constructor(private _candidatService:CandidatService) {
 
@@ -19,7 +19,7 @@ export class CandidatComponent implements OnInit {
     this.getAllCandidat();
   }
   getAllCandidat() {
-   
+
     this._candidatService.getAllCandidat().subscribe((data: Candidat[])=>{
       this.candidats=data;
       console.log("aaa",this.candidats);

@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { PositionnementRoutingModule } from './positionnement-routing.module';
 import { PositionnementComponent } from './positionnement.component';
+import { AddPositionnementComponent } from './add-positionnement/add-positionnement.component';
 
 
 @NgModule({
   declarations: [
-    PositionnementComponent
+    PositionnementComponent,
+    AddPositionnementComponent
   ],
   imports: [
     CommonModule,

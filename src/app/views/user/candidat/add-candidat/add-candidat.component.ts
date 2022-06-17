@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgForm } from '@angular/forms';
-import { Candidat } from '../../models/candidat';
+import { Candidat } from '../../models/model-get/candidat';
 import { CandidatService } from '../../services/candidat.service';
 
 @Component({
