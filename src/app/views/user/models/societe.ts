@@ -3,7 +3,7 @@
 //societe.id_societe, societe.nom, effectif, societe_mere, agence, telephonne, site_web, societe.adress, societe.code_postal,
 //societe.ville, societe.pays, statut_juridique, tva_ic, siret, code_ape,ressource.nom as nom_ressource
 export class Societe {
-  id!:number;
+  id_societe!:number;
   nom: string;
   effectif: number;
   societe_mere: string;
@@ -24,7 +24,7 @@ export class Societe {
 
 
   constructor(
-    id:number,
+    id_societe:number,
     nom: string,
     effectif: number,
     societe_mere: string,
@@ -44,7 +44,7 @@ export class Societe {
     provenance: number,
     ressource: number
   ) {
-    this.id=id;
+    this.id_societe=id_societe;
     this.nom = nom;
     this.effectif = effectif;
     this.societe_mere = societe_mere;

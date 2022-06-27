@@ -1,4 +1,4 @@
-import { Positionnement } from '../models/model-get/Positionnement';
+import { Positionnement } from '../models/Positionnement';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

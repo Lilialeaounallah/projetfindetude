@@ -4,8 +4,8 @@
             <div class="card-head">
                 <h2 style="color: white;">Ajouter societe</h2>
                 <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
-            <i class="material-icons">more_vert</i>
-          </button>
+        <i class="material-icons">more_vert</i>
+      </button>
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
                     <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
                     </li>
@@ -15,303 +15,143 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body row">
-                <div class="col-lg-12">
-                    <h3>Basic Information</h3>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="txtFName">
-                        <label class="mdl-textfield__label">First Name</label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="txtLName">
-                        <label class="mdl-textfield__label">Last Name</label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="txtsa1">
-                        <label class="mdl-textfield__label">Street address 1</label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="txtsa2">
-                        <label class="mdl-textfield__label">Street address 2</label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="txtCity">
-                        <label class="mdl-textfield__label">City</label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="txtCountry">
-                        <label class="mdl-textfield__label">Country</label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="textZip">
-                        <label class="mdl-textfield__label" for="textZip">Zip Code</label>
-                        <span class="mdl-textfield__error">Number required!</span>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="email" id="txtemail">
-                        <label class="mdl-textfield__label">Email</label>
-                        <span class="mdl-textfield__error">Enter Valid Email Address!</span>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="text5">
-                        <label class="mdl-textfield__label" for="text5">Mobile Number</label>
-                        <span class="mdl-textfield__error">Number required!</span>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="sample2" value="" readonly tabIndex="-1">
-                        <label for="sample2" class="pull-right margin-0">
-                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-              </label>
-                        <label for="sample2" class="mdl-textfield__label">Gender</label>
-                        <ul data-mdl-for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                            <li class="mdl-menu__item" data-val="DE">Male</li>
-                            <li class="mdl-menu__item" data-val="BY">Female</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width mdl-textfield--file">
-                        <input class="mdl-textfield__input" placeholder="Upload Profile Photo" type="text" id="uploadFile">
-                        <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                            <i class="material-icons">attach_file</i><input type="file" id="uploadBtn">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <h3>Vehicle Information</h3>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="txtVno">
-                        <label class="mdl-textfield__label" for="text5">Vehicle Number</label>
-                        <span class="mdl-textfield__error">Number required!</span>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="vtype" value="" readonly tabIndex="-1">
-                        <label for="vtype" class="pull-right margin-0">
-                <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-              </label>
-                        <label for="vtype" class="mdl-textfield__label">Vehicle Type</label>
-                        <ul data-mdl-for="vtype" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                            <li class="mdl-menu__item" data-val="1">SUV</li>
-                            <li class="mdl-menu__item" data-val="2">SEDAN</li>
-                            <li class="mdl-menu__item" data-val="3">Crossover</li>
-                            <li class="mdl-menu__item" data-val="4">Coupe</li>
-                            <li class="mdl-menu__item" data-val="5">Van</li>
-                            <li class="mdl-menu__item" data-val="6">Wagon</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="txtvmodel">
-                        <label class="mdl-textfield__label">Vehicle Model</label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="txtSCapacity">
-                        <label class="mdl-textfield__label" for="text5">Seating Capacity</label>
-                        <span class="mdl-textfield__error">Number required!</span>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="date">
-                        <label class="mdl-textfield__label">Tax Renewal Date </label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                        <input class="mdl-textfield__input" type="text" id="date1">
-                        <label class="mdl-textfield__label">Insurance Renewal Date </label>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-t-20">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width mdl-textfield--file">
-                        <input class="mdl-textfield__input" placeholder="Upload Vehicle Documents" type="text" id="uploadLicence">
-                        <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                            <i class="material-icons">attach_file</i><input type="file" id="uploadBtnLicence">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 p-t-20 text-center">
-                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
-                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
-                </div>
+
+            <!--  show msg erreur errormsg-->
+            <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong style="color: black;">{{ errormsg }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+
+            <!--  show msg success message -->
+            <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong style="color: black;">{{ successmsg }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <form [formGroup]="societeForm" (ngSubmit)="addSociete()">
+                <fieldset>
+                    <div class="card-body row">
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="nom" required>
+                                <label class="mdl-textfield__label">nom</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="effectif" type="number" required>
+                                <label class="mdl-textfield__label">effectif</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="societe_mere" type="text" required>
+                                <label class="mdl-textfield__label">societe_mere</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="id_secteur" type="text" required>
+                                <label class="mdl-textfield__label">secteur</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="id_provenance" type="text" required>
+                                <label class="mdl-textfield__label">Provenance</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="agence" type="text" required>
+                                <label class="mdl-textfield__label">agence</label>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="telephonne" type="text" required>
+                                <label class="mdl-textfield__label">Telephonne</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="site_web" type="text" required>
+                                <label class="mdl-textfield__label">site web</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="adress" type="text" required>
+                                <label class="mdl-textfield__label">Adress</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="code_postal" type="text" required>
+                                <label class="mdl-textfield__label">Code postal</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="ville" type="text" required>
+                                <label class="mdl-textfield__label">Ville</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="pays" type="text" required>
+                                <label class="mdl-textfield__label">Pays</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="statut_juridique" type="text " required>
+                                <label class="mdl-textfield__label ">statut_juridique</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " formControlName="tva_ic" type="text " required>
+                                <label class="mdl-textfield__label ">tva_ic</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " formControlName="siret" type="text " required>
+                                <label class="mdl-textfield__label ">siret</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " formControlName="code_ape" type="text " required>
+                                <label class="mdl-textfield__label ">code_ape</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " type="text " formControlName="id_ressource" required>
+                                <label class="mdl-textfield__label ">id_ressource</label>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="col-lg-12 p-t-20 text-center ">
+                            <button type="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink ">Submit</button>
+                        </div>
+
+
+
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
-
-    <!-- Header -->
-    <form #f="ngForm" (ngSubmit)="ajout(f)">
-
-        <div class="w3-row-padding">
-
-            <div class="w3-half">
-                <div class="w3-container" id="contact" style="margin-top:75px">
-                    <h1 class="w3-xxxlarge w3-text-red"><b>Créer une Société.</b></h1>
-                    <hr style="width:50px;border:5px solid red" class="w3-round">
-                    <div class="card " style="background-color:  rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-
-
-                        <div class="w3-section">
-                            <h2>information personelle</h2>
-                            <label>Nom</label>
-                            <input class="w3-input w3-border" #nom="ngModel" [(ngModel)]="societe.nom" type="text" name="nom" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Effectif</label>
-                            <input class="w3-input w3-border" #effectif="ngModel" [(ngModel)]="societe.effectif" type="number" name="effectif" required>
-                        </div>
-
-                        <div class="w3-section">
-                            <label>Sociéte mére</label>
-                            <input class="w3-input w3-border" #societe_mere="ngModel" [(ngModel)]="societe.societe_mere" type="text" name="Prenom" required>
-                        </div>
-
-                        <div class="w3-section">
-                            <label>secteur</label>
-                            <input class="w3-input w3-border" #secteur="ngModel" [(ngModel)]="societe.secteur" type="text" name="secteur" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>provenance</label>
-                            <input class="w3-input w3-border" #provenance="ngModel" [(ngModel)]="societe.provenance" type="text" name="provenance" required>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="w3-half">
-                <div class="w3-container" id="contact" style="margin-top:75px">
-                    <br>
-                    <br>
-                    <br><br><br><br>
-                    <div class="card " style="background-color:  rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-
-                        <div class="w3-section">
-                            <h2>Coordonnées</h2>
-                            <label>Site web</label>
-                            <input class="w3-input w3-border" #site_web="ngModel" [(ngModel)]="societe.site_web" type="text" name="site_web" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Telephonne</label>
-                            <input class="w3-input w3-border" #telephonne="ngModel" [(ngModel)]="societe.telephonne" type="number" name="Telephonne" required>
-                        </div>
-
-                        <div class="w3-section">
-                            <label>Adress</label>
-                            <input class="w3-input w3-border" #adress="ngModel" [(ngModel)]="societe.adress" type="text" name="Adress" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Ville</label>
-                            <input class="w3-input w3-border" #ville="ngModel" [(ngModel)]="societe.ville" type="text" name="Ville" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Code postal</label>
-                            <input class="w3-input w3-border" #code_postal="ngModel" [(ngModel)]="societe.code_postal" type="number" name="code" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>pays</label>
-                            <input class="w3-input w3-border" #pays="ngModel" [(ngModel)]="societe.pays" type="text" name="pays" required>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w3-container" id="contact" style="margin-top:75px">
-                <div class="w3-container" id="contact" style="margin-top:40px">
-                    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-
-                        <div class="w3-section ">
-                            <h2>Etat societe</h2>
-                            <label>Statut juridique</label>
-                            <input class="w3-input w3-border " #statut_juridique="ngModel" [(ngModel)]="societe.statut_juridique" type="text " name="statut_juridique " required>
-                        </div>
-                        <div class="w3-section ">
-                            <label>TVA IC</label>
-                            <input class="w3-input w3-border " #tva_ic="ngModel" [(ngModel)]="societe.tva_ic" type="text " name="tva_ic " required>
-                        </div>
-                        <div class="w3-section ">
-                            <label>Siret</label>
-                            <input class="w3-input w3-border " #siret="ngModel" [(ngModel)]="societe.siret" type="text " name="code " required>
-                        </div>
-
-                        <div class="w3-section ">
-                            <label>Code APE</label>
-                            <input class="w3-input w3-border " #code_ape="ngModel" [(ngModel)]="societe.code_ape" type="text " name="code_ape " required>
-                        </div>
-
-                        <div class="w3-section ">
-                            <label>Ressource</label>
-                            <input class="w3-input w3-border " #ressource="ngModel" [(ngModel)]="societe.ressource" type="text" name="ressource" class="form-control " rows="3 " required>
-                        </div>
-
-
-
-                    </div>
-                </div>
-
-
-            </div>
-
-
-        </div>
-        <button type="submit " class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom ">Créer
-        societe</button>
-    </form>
-
-
-
 </div>

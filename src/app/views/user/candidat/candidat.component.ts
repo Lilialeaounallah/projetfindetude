@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{Candidat} from '../models/model-get/candidat';
+import{Candidat} from '../models/candidat';
 import { CandidatService } from '../services/candidat.service';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ressource as RessourceModel} from '../models/model-get/ressource';
+import { Ressource as RessourceModel} from '../models/ressource';
 import { RessourceService } from '../services/ressource.service';
 
 @Component({

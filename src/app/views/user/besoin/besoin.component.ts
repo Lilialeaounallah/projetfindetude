@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { Besoin as BesoinModel } from '../models/model-get/besoin';
+import { Besoin as BesoinModel } from '../models/besoin';
 import { BesoinService } from '../services/besoin.service';
 
 @Component({

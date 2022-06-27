@@ -1,129 +1,157 @@
-<!-- Photo grid (modal) -->
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="card-head">
+                <h2 style="color: white;">modifier societe</h2>
+                <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+      <i class="material-icons">more_vert</i>
+    </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
+                    <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+                    </li>
+                    <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else here
+                    </li>
+                </ul>
+            </div>
 
-    <!-- Header -->
-    <form #f="ngForm" (ngSubmit)="modifier()">
+            <!--  show msg erreur errormsg-->
+            <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong style="color: black;">{{ errormsg }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
 
-        <div class="w3-row-padding">
+            <!--  show msg success message -->
+            <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong style="color: black;">{{ successmsg }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
 
-            <div class="w3-half">
-                <div class="w3-container" id="contact" style="margin-top:75px">
-                    <h1 class="w3-xxxlarge w3-text-red"><b>Modifier une Société.</b></h1>
-                    <hr style="width:50px;border:5px solid red" class="w3-round">
-                    <div class="card " style="background-color:  rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-
-
-                        <div class="w3-section">
-                            <h2>information personelle</h2>
-                            <label>Nom</label>
-                            <input class="w3-input w3-border" #nom="ngModel" [(ngModel)]="societe.nom" type="text" name="nom" required>
+            <form [formGroup]="societeForm" (ngSubmit)="modifier()">
+                <fieldset>
+                    <div class="card-body row">
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="nom" required>
+                                <label class="mdl-textfield__label">nom</label>
+                            </div>
                         </div>
-                        <div class="w3-section">
-                            <label>Effectif</label>
-                            <input class="w3-input w3-border" #effectif="ngModel" [(ngModel)]="societe.effectif" type="number" name="effectif" required>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="effectif" type="number" required>
+                                <label class="mdl-textfield__label">effectif</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="societe_mere" type="text" required>
+                                <label class="mdl-textfield__label">societe_mere</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="id_secteur" type="text" required>
+                                <label class="mdl-textfield__label">secteur</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="id_provenance" type="text" required>
+                                <label class="mdl-textfield__label">Provenance</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="agence" type="text" required>
+                                <label class="mdl-textfield__label">agence</label>
+                            </div>
                         </div>
 
-                        <div class="w3-section">
-                            <label>Sociéte mére</label>
-                            <input class="w3-input w3-border" #societe_mere="ngModel" [(ngModel)]="societe.societe_mere" type="text" name="Prenom" required>
+
+
+
+
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="telephonne" type="text" required>
+                                <label class="mdl-textfield__label">Telephonne</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="site_web" type="text" required>
+                                <label class="mdl-textfield__label">site web</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="adress" type="text" required>
+                                <label class="mdl-textfield__label">Adress</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="code_postal" type="text" required>
+                                <label class="mdl-textfield__label">Code postal</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="ville" type="text" required>
+                                <label class="mdl-textfield__label">Ville</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="pays" type="text" required>
+                                <label class="mdl-textfield__label">Pays</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="statut_juridique" type="text " required>
+                                <label class="mdl-textfield__label ">statut_juridique</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " formControlName="tva_ic" type="text " required>
+                                <label class="mdl-textfield__label ">tva_ic</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " formControlName="siret" type="text " required>
+                                <label class="mdl-textfield__label ">siret</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " formControlName="code_ape" type="text " required>
+                                <label class="mdl-textfield__label ">code_ape</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " type="text " formControlName="id_ressource" required>
+                                <label class="mdl-textfield__label ">ressource</label>
+                            </div>
                         </div>
 
-                        <div class="w3-section">
-                            <label>secteur</label>
-                            <input class="w3-input w3-border" #secteur="ngModel" [(ngModel)]="societe.secteur" type="text" name="secteur" required>
+
+
+
+
+                        <div class="col-lg-12 p-t-20 text-center ">
+                            <button type="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink ">modifier</button>
                         </div>
-                        <div class="w3-section">
-                            <label>provenance</label>
-                            <input class="w3-input w3-border" #provenance="ngModel" [(ngModel)]="societe.provenance" type="text" name="provenance" required>
-                        </div>
+
 
 
                     </div>
-
-                </div>
-
-            </div>
-
-            <div class="w3-half">
-                <div class="w3-container" id="contact" style="margin-top:75px">
-                    <br>
-                    <br>
-                    <br><br><br><br>
-                    <div class="card " style="background-color:  rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-
-                        <div class="w3-section">
-                            <h2>Coordonnées</h2>
-                            <label>Site web</label>
-                            <input class="w3-input w3-border" #site_web="ngModel" [(ngModel)]="societe.site_web" type="text" name="site_web" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Telephonne</label>
-                            <input class="w3-input w3-border" #telephonne="ngModel" [(ngModel)]="societe.telephonne" type="number" name="Telephonne" required>
-                        </div>
-
-                        <div class="w3-section">
-                            <label>Adress</label>
-                            <input class="w3-input w3-border" #adress="ngModel" [(ngModel)]="societe.adress" type="text" name="Adress" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Ville</label>
-                            <input class="w3-input w3-border" #ville="ngModel" [(ngModel)]="societe.ville" type="text" name="Ville" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Code postal</label>
-                            <input class="w3-input w3-border" #code_postal="ngModel" [(ngModel)]="societe.code_postal" type="number" name="code" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>pays</label>
-                            <input class="w3-input w3-border" #pays="ngModel" [(ngModel)]="societe.pays" type="text" name="pays" required>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w3-container" id="contact" style="margin-top:75px">
-                <div class="w3-container" id="contact" style="margin-top:40px">
-                    <div class=" card " style="background-color: rgb(246, 237, 226);border:20px ;border: medium ;padding: 20px; ">
-
-                        <div class="w3-section ">
-                            <h2>Etat societe</h2>
-                            <label>Statut juridique</label>
-                            <input class="w3-input w3-border " #statut_juridique="ngModel" [(ngModel)]="societe.statut_juridique" type="text " name="statut_juridique " required>
-                        </div>
-                        <div class="w3-section ">
-                            <label>TVA IC</label>
-                            <input class="w3-input w3-border " #tva_ic="ngModel" [(ngModel)]="societe.tva_ic" type="text " name="tva_ic " required>
-                        </div>
-                        <div class="w3-section ">
-                            <label>Siret</label>
-                            <input class="w3-input w3-border " #siret="ngModel" [(ngModel)]="societe.siret" type="text " name="code " required>
-                        </div>
-
-                        <div class="w3-section ">
-                            <label>Code APE</label>
-                            <input class="w3-input w3-border " #code_ape="ngModel" [(ngModel)]="societe.code_ape" type="text " name="code_ape " required>
-                        </div>
-
-                        <div class="w3-section ">
-                            <label>Ressource</label>
-                            <input class="w3-input w3-border " #ressource="ngModel" [(ngModel)]="societe.ressource" type="text" name="ressource" class="form-control " rows="3 " required>
-                        </div>
-
-
-
-                    </div>
-                </div>
-
-
-            </div>
-
-
+                </fieldset>
+            </form>
         </div>
-        <button type="submit " class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom ">Modifier
-        societe</button>
-    </form>
-
-
-
+    </div>
 </div>

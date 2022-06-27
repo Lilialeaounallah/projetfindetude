@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PositionnementService } from '../services/positionnement.service';
-import {  Positionnement as PositionnementModel  } from '../models/model-get/Positionnement';
+import {  Positionnement as PositionnementModel  } from '../models/Positionnement';
 
 @Component({
   selector: 'app-positionnement',

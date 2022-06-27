@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Societe } from '../models/model-get/societe';
+import { Societe } from '../models/societe';
 import { SocieteService } from '../services/societe.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { SocieteService } from '../services/societe.service';
   styleUrls: ['./societe.component.css']
 })
 export class SocieteComponent implements OnInit {
+  successmsg!: string;
 
   societes!: Societe[];
 
@@ -19,15 +20,32 @@ export class SocieteComponent implements OnInit {
   ngOnInit(): void {
     this.getAllSociete();
   }
+
+
+
   getAllSociete()  {
 
-    this._societeService.getAllSociete().subscribe((data: Societe[])=>{
-      this.societes=data;
-      console.log("aaa",this.societes);
-    },(err: any)=>{
-      console.log("ERROR",err);
-    })
+    this._societeService.getAllSociete().subscribe((res:Societe[])=>{this.societes=res;
+      console.log("aaa",res);
+    }/*,(err: any)=>{
+      console.log("ERROR",err);}*/)
+
   }
+
+  //get delete id
+  deleteId(id_societe:number){
+    console.log('delete id ==>',id_societe)
+    this._societeService.deleteSocieteSer(id_societe).subscribe((res:Societe)=>{
+      console.log(res,'deleted res ==>')
+      this.successmsg='élèment supprimer avec succées !!';
+      this.getAllSociete();
+
+    });
+  }
+
+
+
+
 
 
 }

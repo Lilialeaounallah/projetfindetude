@@ -21,7 +21,7 @@
     </li>
 
     <li class="nav-item tab-all">
-        <button routerLink="/addSociete" class="button"><span>ajouter sociétè</span></button>
+        <button routerLink="/add-societe" class="button"><span>ajouter sociétè</span></button>
     </li>
 </ul>
 <div class="tab-content tab-space ">
@@ -50,6 +50,10 @@
                             </li>
                             <li class="mdl-menu__item "><i class="material-icons ">favorite</i>Something else here</li>
                         </ul>
+                    </div>
+                    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong style="color: black;">{{ successmsg }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <div class="card-body ">
                         <div class="table-scrollable ">
@@ -84,8 +88,6 @@
                                             <img src="../../assets/img/user/user1.jpg " alt=" ">
                                         </td>
                                         <!--debut contenu  forms data-->
-
-
                                         <td>{{societe.nom}}</td>
                                         <td>{{societe.effectif}}</td>
                                         <td>{{societe.societe_mere}}</td>
@@ -106,12 +108,13 @@
                                         <!--fin contenu forms data-->
 
                                         <td class="center ">
-                                            <a href="# " class="btn btn-tbl-edit btn-xs ">
+                                            <button class="btn btn-tbl-edit btn-xs " [routerLink]="['/updateSociete',societe.id_societe]">
                                                 <i class="fa fa-pencil "></i>
-                                            </a>
-                                            <a class="btn btn-tbl-delete btn-xs ">
+                                            </button>
+
+                                            <button class="btn btn-tbl-delete btn-xs " (click)="deleteId(societe.id_societe)">
                                                 <i class="fa fa-trash-o "></i>
-                                            </a>
+                                            </button>
                                         </td>
                                     </tr>
 

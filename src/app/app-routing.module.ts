@@ -38,9 +38,6 @@ const routes: Routes = [
   {path:'updateCandidat/:id',
   loadChildren:()=>import('./views/user/candidat/update-candidat/update-candidat.module').then((a)=>a.UpdateCandidatModule)
   },
-  {path:'detailsCandidat/:id',
-  loadChildren:()=>import('./views/user/candidat/details-candidat/details-candidat.module').then((a)=>a.DetailsCandidatModule)
-  },
 
   {path:'positionnement',
   loadChildren:()=>import('./views/user/positionnement/positionnement.module').then((po)=>po.PositionnementModule)
@@ -73,20 +70,14 @@ const routes: Routes = [
   {path:'client',
   loadChildren:()=>import('./views/user/client/client.module').then((cl)=>cl.ClientModule)
   },
-  {path:'addSociete',
+  {path:'add-societe',
   loadChildren:()=>import('./views/user/societe/add-societe/add-societe.module').then((a)=>a.AddSocieteModule)
   },
-  {path:'updateSociete/:id',
+  {path:'updateSociete/:id_societe',
   loadChildren:()=>import('./views/user/societe/update-societe/update-societe.module').then((a)=>a.UpdateSocieteModule)
-  },
-  {path:'detailsSociete/:id',
-  loadChildren:()=>import('./views/user/societe/details-societe/details-societe.module').then((a)=>a.DetailsSocieteModule)
   },
   {path:'addClient',
   loadChildren:()=>import('./views/user/client/add-client/add-client.module').then((m)=>m.AddClientModule)
-  },
-  {path:'detailsClient/:id',
-  loadChildren:()=>import('./views/user/client/details-client/details-client.module').then((m)=>m.DetailsClientModule)
   },
   {path:'updateClient/:id',
   loadChildren:()=>import('./views/user/client/update-client/update-client.module').then((m)=>m.UpdateClientModule)
@@ -95,7 +86,7 @@ const routes: Routes = [
   ]
 
 },
-
+/** *************************************************************************************************** */
 
   {path:'admin',component:AdminComponent,
 children:[

@@ -38,3 +38,7 @@
     -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
     transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
+
+table>tbody>tr>td {
+    color: rgb(239, 241, 223);
+}

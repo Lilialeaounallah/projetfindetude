@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CorsModule } from './cors/cors.module';
 import { LoginComponent } from './views/user/login/login.component';
-
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -23,6 +23,7 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule
 
 
   ],
