@@ -1,17 +1,18 @@
-import { RouterModule } from '@angular/router';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AuthUserComponent } from './auth-user/auth-user.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
-import { AuthUserComponent } from './auth-user/auth-user.component';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
-    AdminComponent,
+    AuthUserComponent,
     UserComponent,
-    AuthUserComponent
+    AdminComponent
   ],
   imports: [
     CommonModule,
