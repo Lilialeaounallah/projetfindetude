@@ -4,8 +4,8 @@
             <div class="card-head">
                 <h2 style="color: white;">Ajouter client</h2>
                 <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
-          <i class="material-icons">more_vert</i>
-        </button>
+        <i class="material-icons">more_vert</i>
+      </button>
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
                     <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
                     </li>
@@ -15,166 +15,162 @@
                     </li>
                 </ul>
             </div>
-            <form #clientForm="ngForm" (ngSubmit)="ajout() ">
+
+            <!---------------start Form ------------------------------------------>
+
+            <!--  show msg erreur errormsg-->
+            <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong style="color: black;">{{errormsg}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <!--  show msg success message -->
+            <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong style="color: black;">{{successmsg}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <form (ngSubmit)="AddClient()" [formGroup]="clientForm">
                 <fieldset>
-                    <div class="card-body row">
-
-
-
-
+                    <div class class="card-body row">
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" id="txtLName" #civilite="ngModel" [(ngModel)]="Client.civilite " type="text " name="Civilite " required>
-                                <label class="mdl-textfield__label">Civilité</label>
+                                <input class="mdl-textfield__input" formControlName="civilite" type="text" required>
+                                <label class="mdl-textfield__label">civilite</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" id="txtsa1" #nom="ngModel" [(ngModel)]="Client.nom " name="nom " required>
-                                <label class="mdl-textfield__label">Nom</label>
+                                <input class="mdl-textfield__input" formControlName="nom" type="text" required>
+                                <label class="mdl-textfield__label">nom</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #prenom="ngModel" [(ngModel)]="Client.prenom " name="prenom " required>
-                                <label class="mdl-textfield__label">Prenom</label>
+                                <input class="mdl-textfield__input" formControlName="prenom" type="text" required>
+                                <label class="mdl-textfield__label">prenom</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #fonction="ngModel" [(ngModel)]="Client.fonction " name="fonction " required>
-                                <label class="mdl-textfield__label">Fonction</label>
+                                <input class="mdl-textfield__input" formControlName="fonction" type="text" required>
+                                <label class="mdl-textfield__label">fonction</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #provenance="ngModel" [(ngModel)]="Client.provenance " name="provenance " required>
+                                <input class="mdl-textfield__input" formControlName="service" required>
+                                <label class="mdl-textfield__label">service</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="provenance" required>
                                 <label class="mdl-textfield__label">Provenance</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #libellet_preciser="ngModel" [(ngModel)]="Client.libellet_preciser " name="libellet_preciser " required>
-                                <label class="mdl-textfield__label">plus de présision</label>
+                                <input class="mdl-textfield__input" formControlName="libellet_preciser" type="text" required>
+                                <label class="mdl-textfield__label">plus d'information</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #ressource="ngModel" [(ngModel)]="Client.ressource " name="ressource " required>
-                                <label class="mdl-textfield__label">Ressource</label>
+                                <input class="mdl-textfield__input" formControlName="ressource" required>
+                                <label class="mdl-textfield__label">ressource</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #agence="ngModel" [(ngModel)]="Client.agence " name="agence " required>
-                                <label class="mdl-textfield__label">Agence</label>
+                                <input class="mdl-textfield__input" formControlName="agence" type="text" required>
+                                <label class="mdl-textfield__label">agence</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #societe="ngModel" [(ngModel)]="Client.societe " name="societe " required>
-                                <label class="mdl-textfield__label">Sociétè</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #etat_client="ngModel" [(ngModel)]="Client.etat_client " name="etat_client " required>
-                                <label class="mdl-textfield__label">Etat client</label>
+                                <input class="mdl-textfield__input" formControlName="societe" required>
+                                <label class="mdl-textfield__label">societe</label>
                             </div>
                         </div>
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="email" #email="ngModel" [(ngModel)]="Client.email " name="email " required>
-                                <label class="mdl-textfield__label">Email</label>
-                                <span class="mdl-textfield__error">Enter Valid Email Address!</span>
+                                <input class="mdl-textfield__input" formControlName="etat_client" type="text" required>
+                                <label class="mdl-textfield__label">etat_client</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #telephonne="ngModel" [(ngModel)]="Client.telephonne " name="telephonne " required>
-                                <label class="mdl-textfield__label">Telephonne</label>
+                                <input class="mdl-textfield__input" formControlName="email" type="text" required>
+                                <label class="mdl-textfield__label">email</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #adress="ngModel" [(ngModel)]="Client.adress " name="adress " required>
+                                <input class="mdl-textfield__input" formControlName="telephonne" type="text" required>
+                                <label class="mdl-textfield__label">telephonne</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="adress" type="text" required>
                                 <label class="mdl-textfield__label">Adress</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #code_postal="ngModel" [(ngModel)]="Client.code_postal " name="code_postal " required>
+                                <input class="mdl-textfield__input" formControlName="code_postal" type="text" required>
                                 <label class="mdl-textfield__label">Code postal</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #ville="ngModel" [(ngModel)]="Client.ville " name="ville " required>
+                                <input class="mdl-textfield__input" formControlName="ville" type="text" required>
                                 <label class="mdl-textfield__label">Ville</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #pays="ngModel" [(ngModel)]="Client.pays " name="pays " required>
+                                <input class="mdl-textfield__input" formControlName="pays" type="text" required>
                                 <label class="mdl-textfield__label">Pays</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #libellet_comentaire="ngModel" [(ngModel)]="Client.libellet_comentaire " name="libellet_comentaire " required>
-                                <label class="mdl-textfield__label">Commentaire</label>
+                                <input class="mdl-textfield__input" formControlName="commentaire" type="text " required>
+                                <label class="mdl-textfield__label ">commentaire</label>
                             </div>
                         </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #domaine="ngModel" [(ngModel)]="Client.domaine " name="domaine " required>
-                                <label class="mdl-textfield__label">Domaine</label>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " formControlName="domaine" required>
+                                <label class="mdl-textfield__label ">domaine</label>
                             </div>
                         </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #domaine="ngModel" [(ngModel)]="Client.domaine " name="domaine " required>
-                                <label class="mdl-textfield__label">Domaine</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" type="text" #outils="ngModel" [(ngModel)]="Client.outils " name="outils " required>
-                                <label class="mdl-textfield__label">Outils</label>
+                        <div class="col-lg-6 p-t-20 ">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
+                                <input class="mdl-textfield__input " formControlName="outils" required>
+                                <label class="mdl-textfield__label ">outils</label>
                             </div>
                         </div>
 
 
 
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width mdl-textfield--file">
-                                <input class="mdl-textfield__input" placeholder="Attacher un document" type="text" id="uploadFile">
-                                <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                                    <i class="material-icons">attach_file</i><input type="file" id="uploadBtn">
-                                </div>
-                            </div>
+
+
+
+                        <div class="col-lg-12 p-t-20 text-center ">
+                            <button type="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink ">Submit</button>
                         </div>
-
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width mdl-textfield--file">
-                                <input class="mdl-textfield__input" placeholder="Attacher un autre document" type="text" id="uploadLicence">
-                                <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                                    <i class="material-icons">attach_file</i><input type="file" id="uploadBtnLicence">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 p-t-20 text-center">
-                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink" (click)=" ajout()">Submit</button>
-                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
-                        </div>
-
-
-
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
 </div>
+
+
+
+
+<!---------------end Form ------------------------------------------>

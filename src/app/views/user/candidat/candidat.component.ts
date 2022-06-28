@@ -8,6 +8,7 @@ import { CandidatService } from '../services/candidat.service';
   styleUrls: ['./candidat.component.css']
 })
 export class CandidatComponent implements OnInit {
+  successmsg!: string;
   candidats!: Candidat[];
 
   constructor(private _candidatService:CandidatService) {
@@ -20,13 +21,26 @@ export class CandidatComponent implements OnInit {
   }
   getAllCandidat() {
 
-    this._candidatService.getAllCandidat().subscribe((data: Candidat[])=>{
-      this.candidats=data;
-      console.log("aaa",this.candidats);
-    },err=>{
-      console.log("ERROR",err);
-    })
+    this._candidatService.getAllCandidat().subscribe((res:Candidat[])=>{
+      this.candidats=res;
+      console.log("all candidat ==>",res);
+    }/*,(err: any)=>{
+      console.log("ERROR",err);}*/)
+
   }
+
+  // delete by id
+  deleteId(id_candidat:number){
+    console.log('delete id ==>',id_candidat)
+    this._candidatService.deleteCandidatSer(id_candidat).subscribe((res:Candidat)=>{
+      console.log(res,'deleted res ==>')
+      this.successmsg='élèment supprimer avec succées !!';
+      this.getAllCandidat();
+
+    });
+  }
+
+
 
 
 

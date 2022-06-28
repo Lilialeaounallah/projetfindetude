@@ -1,5 +1,5 @@
 export class Client {
-  id: number;
+  id_client: number;
   civilite: string;
   nom: string;
   prenom: string;
@@ -20,8 +20,10 @@ export class Client {
   commentaire: string;
   domaine: string;
   outils: number;
+
+
   constructor(
-    id: number,
+    id_client: number,
     civilite: string,
     nom: string,
     prenom: string,
@@ -45,7 +47,7 @@ export class Client {
     domaine: string,
     outils: number
   ) {
-    this.id = id;
+    this.id_client = id_client;
     this.civilite = civilite;
     this.nom = nom;
     this.prenom = prenom;

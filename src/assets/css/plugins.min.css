@@ -2,10 +2,10 @@
  *  Document   : plugins.css
  *  Author     : Redstartheme
  *  Description: stylesheet for third  party plugin customizations
-
-
+ 
+ 
  				STRUCTURE
-
+ 				
  				1. Bootstrap DatePicker
  				2. Bootstrap Daterangepicker
  				3. Bootstrap  Datetimepicker
@@ -24,15 +24,12 @@
 				16. Select2
 				17. iCheck
 				18. Color Picker
-
-
+ 				
+ 				
  */
-
-
 /**********************************
 		1. Bootstrap DatePicker
 ***********************************/
-
 .datepicker .active,
 .datepicker .active:hover,
 .datepicker .selected,
@@ -40,7 +37,6 @@
     background-image: none !important;
     filter: none !important
 }
-
 .datepaginator a {
     font-family: 'Open Sans';
     font-size: 13px;
@@ -103,7 +99,6 @@
 .daterangepicker .fa-angle-right:before {
     content: ""
 }
-
 
 /***********************************
 	2. Bootstrap Daterangepicker
@@ -186,7 +181,6 @@
     content: ""
 }
 
-
 /***********************************
 	3. Bootstrap  Datetimepicker
 ************************************/
@@ -214,20 +208,15 @@
     content: ""
 }
 
-
 /* change z-index when opened in modal */
-
 .modal-open .colorpicker,
 .modal-open .datepicker,
 .modal-open .daterangepicker {
     z-index: 10055 !important
 }
-
-
 /***********************************
 	4. Bootstrap Colorpicker
 ************************************/
-
 .colorpicker.dropdown-menu,
 .daterangepicker.dropdown-menu,
 .datetimepicker.dropdown-menu {
@@ -270,7 +259,6 @@
     white-space: nowrap;
     overflow: hidden
 }
-
 
 /***********************************
 	5. Bootstrap Modal
@@ -398,11 +386,9 @@
     z-index: 9999 !important
 }
 
-
 /********************************************
 	7. Color variants
 *********************************************/
-
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
     color: #fff;
@@ -733,12 +719,9 @@
         stroke-dashoffset: 0
     }
 }
-
-
 /*--------------------------------------------------
     8. Animated Pie Chart
 ----------------------------------------------------*/
-
 .animated-pie-chart,
 .columnLine {
     width: 100%;
@@ -891,12 +874,9 @@
     background-image: none;
     filter: none
 }
-
-
 /************************************
 	9. Data tables
 *************************************/
-
 .table-checkable tr>td:first-child,
 .table-checkable tr>th:first-child {
     text-align: center;
@@ -1099,55 +1079,46 @@ div.dt-button:last-child {
 .dataTable td .popover-content .btn-group {
     position: static !important
 }
-
 .table .btn-group .btn {
     margin-left: 0;
     margin-right: -1px
 }
-
-.buttons-copy {
-    background-color: #666 !important;
+.buttons-copy{
+	background-color: #666 !important;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 13px 24px -11px rgba(233, 30, 99, .6);
     color: #fff !important;
     border-radius: 30px !important;
     border: 0px !important;
 }
-
 .buttons-excel {
-    background-color: #59bf70 !important;
+	background-color: #59bf70 !important;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 13px 24px -11px rgba(233, 30, 99, .6);
     color: #fff !important;
     border-radius: 30px !important;
     border: 0px !important;
 }
-
 .buttons-csv {
-    background-color: #2ab9d0 !important;
+	background-color: #2ab9d0 !important;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 13px 24px -11px rgba(233, 30, 99, .6);
     color: #fff !important;
     border-radius: 30px !important;
     border: 0px !important;
 }
-
 .buttons-pdf {
-    background-color: #e91e63 !important;
+	background-color: #e91e63 !important;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 13px 24px -11px rgba(233, 30, 99, .6);
     color: #fff !important;
     border-radius: 30px !important;
     border: 0px !important;
 }
-
-
 /*******************************
 	10. Dropzone
 ********************************/
-
 .dropzone {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0
 }
-
 .dropzone-file-area {
     border: 2px dashed #028AF4;
     background: #fff;
@@ -1155,24 +1126,18 @@ div.dt-button:last-child {
     margin: 0 auto;
     text-align: center
 }
-
 .dz-hidden-input {
     left: 0
 }
-
 .fancybox-overlay {
     z-index: 100000
 }
-
 .fancybox-opened {
     z-index: 100001
 }
-
-
 /*******************************
 	11. Spinner
 ********************************/
-
 .spinner-buttons.btn-group-vertical .btn {
     text-align: center;
     margin: 0;
@@ -1182,16 +1147,13 @@ div.dt-button:last-child {
     padding-right: 6px;
     padding-top: 0
 }
-
 .page-style-rounded .spinner-buttons.btn-group-vertical .btn.spinner-up {
     border-radius: 0;
     border-top-right-radius: 2px !important
 }
-
 .page-style-rounded .spinner-buttons.btn-group-vertical .btn.spinner-down {
     border-radius: 0 0 2px
 }
-
 
 /***********************************************
 	12. Fullcalendar
@@ -1203,16 +1165,13 @@ div.dt-button:last-child {
     margin-bottom: 5px;
     margin-left: 5px
 }
-
 .fc-scroller {
     overflow-y: auto;
     overflow-x: hidden
 }
-
 .fc-month-view .fc-scroller {
     height: auto !important
 }
-
 
 /**********************************************
 	13. Google Maps
@@ -1222,18 +1181,15 @@ div.dt-button:last-child {
     height: 300px;
     width: 100%
 }
-
 .gmaps img {
     max-width: none
 }
-
 #gmap_static div {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     display: block;
     height: 300px
 }
-
 #gmap_routes_instructions {
     margin-top: 10px;
     margin-bottom: 0
@@ -1243,11 +1199,9 @@ div.dt-button:last-child {
 .blueimp-gallery .prev {
     border-radius: 23px !important
 }
-
 .jquery-notific8-message {
     font-size: 13px
 }
-
 [class*=jquery-notific8],
 [class*=jquery-notific8]:after,
 [class*=jquery-notific8]:before {
@@ -1255,17 +1209,14 @@ div.dt-button:last-child {
     -moz-box-sizing: content-box;
     box-sizing: content-box
 }
-
 .left .jquery-notific8-close-sticky span,
 .right .jquery-notific8-close-sticky span {
     font-size: 10px
 }
-
 .jquery-notific8-heading {
     font-weight: 300;
     font-size: 16px
 }
-
 .scroller {
     padding: 0 12px 0 0;
     margin: 0;
@@ -1276,7 +1227,6 @@ div.dt-button:last-child {
     width: auto !important;
     height: auto !important
 }
-
 .slider {
     border: 0;
     padding: 0;
@@ -1284,25 +1234,20 @@ div.dt-button:last-child {
     margin: 12px 5px;
     min-height: 11px
 }
-
 .ui-slider-vertical {
     width: 11px
 }
-
 .ui-slider-horizontal .ui-slider-handle {
     top: -3px
 }
-
 .ui-slider-vertical .ui-slider-handle {
     left: -3px
 }
-
 .ui-slider-handle,
 .ui-slider-vertical {
     filter: none !important;
     background-image: none !important
 }
-
 
 /*************************************
 				14. Vector Map
@@ -1314,18 +1259,14 @@ div.dt-button:last-child {
     width: 16px;
     background-color: #666
 }
-
 .vmaps {
     position: relative;
     overflow: hidden;
     height: 300px
 }
-
-
 /*************************************
 				15. Morris Chart
 *****************************************/
-
 .morris-hover.morris-default-style .morris-hover-row-label {
     text-align: left;
     font-weight: 400;
@@ -1333,13 +1274,11 @@ div.dt-button:last-child {
     color: #7D8C9D;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
-
 .morris-hover.morris-default-style .morris-hover-point {
     text-align: left;
     font-size: 14px;
     font-weight: 400
 }
-
 .morris-hover.morris-default-style .morris-hover-point,
 .select2-container--bootstrap .select2-results__group,
 .select2-container--bootstrap .select2-selection {
@@ -1352,11 +1291,9 @@ div.dt-button:last-child {
     border: 1px solid #e5e5e5;
     padding: 5px
 }
-
 iframe[src="about:blank"] {
     display: none
 }
-
 
 /***********************************
 			16. Select2
@@ -1369,54 +1306,44 @@ iframe[src="about:blank"] {
     -webkit-box-shadow: none;
     box-shadow: none
 }
-
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove {
     cursor: pointer;
     display: inline-block;
     font-weight: 700;
     margin-right: 3px
 }
-
 .select2-container--bootstrap .select2-results__group {
     display: block;
     font-size: 12px;
     white-space: nowrap;
     font-weight: 600
 }
-
 .modal-open .select2-dropdown {
     z-index: 10060
 }
-
 .modal-open .select2-close-mask {
     z-index: 10055
 }
-
 .modal-open .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
     width: auto !important
 }
-
 .select2-result-repository {
     padding-top: 4px;
     padding-bottom: 3px
 }
-
 .select2-result-repository__avatar {
     float: left;
     width: 60px;
     margin-right: 10px
 }
-
 .select2-result-repository__avatar img {
     width: 100%;
     height: auto;
     border-radius: 2px
 }
-
 .select2-result-repository__meta {
     margin-left: 70px
 }
-
 .select2-result-repository__title {
     color: #000;
     font-weight: 700;
@@ -1424,12 +1351,10 @@ iframe[src="about:blank"] {
     line-height: 1.1;
     margin-bottom: 4px
 }
-
 .select2-result-repository__forks,
 .select2-result-repository__stargazers {
     margin-right: 1em
 }
-
 .select2-result-repository__forks,
 .select2-result-repository__stargazers,
 .select2-result-repository__watchers {
@@ -1437,34 +1362,27 @@ iframe[src="about:blank"] {
     color: #aaa;
     font-size: 11px
 }
-
 .select2-result-repository__description {
     font-size: 13px;
     color: #777;
     margin-top: 4px
 }
-
 .select2-results__option--highlighted .select2-result-repository__title {
     color: #fff
 }
-
 .select2-results__option--highlighted .select2-result-repository__description,
 .select2-results__option--highlighted .select2-result-repository__forks,
 .select2-results__option--highlighted .select2-result-repository__stargazers,
 .select2-results__option--highlighted .select2-result-repository__watchers {
     color: #c1d7e9
 }
-
 .select2-selection__choice {
     background-color: #eee !important;
     border: 1px solid #eee !important
 }
-
 .select2-selection__choice .select2-selection__choice__remove {
     font-weight: 400 !important
 }
-
-
 /***********************************
 	17. iCheck
 ***********************************/
@@ -1473,38 +1391,30 @@ iframe[src="about:blank"] {
     display: block;
     margin-bottom: 8px
 }
-
 .icheck-list>label:last-child {
     margin-bottom: 0
 }
-
 .form-horizontal .icheck-inline {
     margin-top: 8px
 }
-
 .icheck-inline>label {
     margin-left: 15px
 }
-
 .icheck-inline>label:first-child {
     margin-left: 0
 }
-
 div[class*=icheckbox_],
 div[class*=iradio_] {
     margin-right: 5px;
     top: -1px !important
 }
-
 .ui-select-match-close {
     margin-top: 5px !important;
     margin-left: 5px !important
 }
-
 .minicolors-swatch {
     border: 0
 }
-
 pre[class*=language-] {
     padding: 10px;
     background: 0 0 !important;
@@ -1512,21 +1422,15 @@ pre[class*=language-] {
     box-shadow: none !important;
     margin: 0
 }
-
 pre[class*=language-] code {
     background: 0 0 !important;
     box-shadow: none !important;
     border: 0 !important
 }
-
-
 /***********************************
 			18. Color Picker
 ***********************************/
-
-.colorpicker.dropdown-menu,
-.daterangepicker.dropdown-menu,
-.datetimepicker.dropdown-menu {
+.colorpicker.dropdown-menu, .daterangepicker.dropdown-menu, .datetimepicker.dropdown-menu {
     padding: 5px;
     right: auto!important;
 }

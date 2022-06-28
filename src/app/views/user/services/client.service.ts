@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Client as ClientModel } from '../models/client';
-import { Clientinsert } from '../models/clientinsert';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,17 +21,21 @@ export class ClientService {
     getAllClient(): Observable<any>{
       return this._httpClient.get<any>(`${this.clientUrl}`)
     }
-     AddClient(data:Clientinsert): Observable<Clientinsert>{
-     return  this._httpClient.post<Clientinsert>(`${this.clientUrl}`,data)
+     AddClientSer(data:any): Observable<any>{
+     return  this._httpClient.post(`${this.clientUrl}/new`,data)
     }
-   updateClient(data:ClientModel): Observable<ClientModel> {
-      return this._httpClient.put<ClientModel>(`${this.clientUrl}`,data)
+   updateClientSer(data:any,id_client:number): Observable<ClientModel> {
+      return this._httpClient.put<ClientModel>(`${this.clientUrl}/${id_client}`,data)
     }
-    getClient(id:number): Observable<ClientModel[]>{
-      return this._httpClient.get<ClientModel[]>(`${this.clientUrl}/${id}`)
+
+    deleteClientSer(id_client:number): Observable<ClientModel>{
+      return this._httpClient.delete<ClientModel>(`${this.clientUrl}/${id_client}`)
     }
-    deleteClient(id:number): Observable<ClientModel>{
-      return this._httpClient.delete<ClientModel>(`${this.clientUrl}/${id}`)
+
+    //get client by is
+    getSingleData(id_client:any):Observable<any>{
+      return this._httpClient.get(`${this.clientUrl}/${id_client}`);
+
     }
 
 

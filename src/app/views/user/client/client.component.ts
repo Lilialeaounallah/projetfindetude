@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Client as ClientModel } from '../models/client';
+import { Client } from '../models/client';
 import { ClientService } from '../services/client.service';
+import { Societe } from '../models/societe';
 
 @Component({
   selector: 'app-client',
@@ -9,9 +9,10 @@ import { ClientService } from '../services/client.service';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-  clients!: ClientModel[];
+  clients!: Client[];
+  successmsg!: string;
 
-  constructor(private _clientService:ClientService, private router:Router) {
+  constructor(private _clientService:ClientService) {
 
 
   }
@@ -19,25 +20,26 @@ export class ClientComponent implements OnInit {
   ngOnInit(): void {
     this.getAllClient();
   }
-  getAllClients() {
 
-    this._clientService.getAllClient().subscribe((data: ClientModel[])=>{
-      this.clients=data;
-      console.log("aaa",this.clients);
-    },err=>{
-      console.log("ERROR",err);
-    })
-  }
 
 
   getAllClient(){
-    return this._clientService.getAllClient().subscribe((data)=>{
-      this.clients= data;
-      console.log("liste des client    :",this.clients)
-    },err=>{
-      console.log("erreur",err)
-    })
+    this._clientService.getAllClient().subscribe((res:Client[])=>{
+      this.clients=res;
+      console.log('all client ==>',res);
+
+    });
   }
+//delete by id
+deleteById(id_client:number){
+  console.log('deleted id ===>',id_client)
+  this._clientService.deleteClientSer(id_client).subscribe((res:Client)=>{
+    console.log(res,'deleted res ==>')
+    this.successmsg='élèment supprimer avec succées'
+    this.getAllClient();
+  });
+}
+
 }
 
 

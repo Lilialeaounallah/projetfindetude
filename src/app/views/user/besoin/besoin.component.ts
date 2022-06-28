@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { Besoin as BesoinModel } from '../models/besoin';
+import { Besoin, Besoin as BesoinModel } from '../models/besoin';
 import { BesoinService } from '../services/besoin.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { BesoinService } from '../services/besoin.service';
 export class BesoinComponent implements OnInit {
   name="Besoin";
   besoins!: BesoinModel[];
+  successmsg!: string;
 
   constructor(private _besoinService:BesoinService) {
 
@@ -21,14 +22,27 @@ export class BesoinComponent implements OnInit {
   ngOnInit(): void {
     this.getAllBesoin();
   }
-getAllBesoin()  {
 
-    this._besoinService.getAllBesoin().subscribe((data: BesoinModel[])=>{
-      this.besoins=data;
-      console.log("besoins      !!",this.besoins);
-    },(err: any)=>{
-      console.log("ERROR",err);
-    })
+
+  getAllBesoin()  {
+
+    this._besoinService.getAllBesoin().subscribe((res:Besoin[])=>{
+      this.besoins=res;
+      console.log("all besoin ==>",res);
+    }/*,(err: any)=>{
+      console.log("ERROR",err);}*/)
+
+  }
+
+  // delete by id
+  deleteId(id_besoin:number){
+    console.log('delete id ==>',id_besoin)
+    this._besoinService.deleteBesoinSer(id_besoin).subscribe((res:Besoin)=>{
+      console.log(res,'deleted res ==>')
+      this.successmsg='élèment supprimer avec succées !!';
+      this.getAllBesoin();
+
+    });
   }
 
 }

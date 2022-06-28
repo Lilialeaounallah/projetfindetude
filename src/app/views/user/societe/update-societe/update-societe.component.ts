@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Societe } from '../../models/societe';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SocieteService } from '../../services/societe.service';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'update-societe',
   templateUrl: './update-societe.component.html',
@@ -20,10 +19,12 @@ export class UpdateSocieteComponent implements OnInit {
 
   constructor(
     private _service: SocieteService,
-    private ActivatedRoute: ActivatedRoute
+    private ActivatedRoute: ActivatedRoute,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
+
     //message to verify id getted from url
     console.log(
       this.ActivatedRoute.snapshot.paramMap.get('id_societe'),
@@ -92,6 +93,8 @@ export class UpdateSocieteComponent implements OnInit {
       this._service.updateSociete(this.societeForm.value,this.getparamid).subscribe((res)=>{
         console.log(res,'res updated')
         this.successmsg='modification effectuer avec succées '
+        this.router.navigate(['/societe']);
+
 
       });
 

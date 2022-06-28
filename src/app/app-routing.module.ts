@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './cors/admin/admin.component';
 import { AuthUserComponent } from './cors/auth-user/auth-user.component';
 import { UserComponent } from './cors/user/user.component';
 
@@ -11,23 +10,12 @@ const routes: Routes = [
     {path:'home',
     loadChildren:()=>import('./views/user/home/home.module').then((h)=>h.HomeModule)
   },
-  {path:'login',
-  loadChildren:()=>import('./views/user/login/login.module').then((l)=>l.LoginModule)
-
-  },
   {path:'besoin',
   loadChildren:()=>import('./views/user/besoin/besoin.module').then((b)=>b.BesoinModule)
   },
   {path:'add-besoin',
   loadChildren:()=>import('./views/user/besoin/add-besoin/add-besoin.module').then((b)=>b.AddBesoinModule)
   },
-
-
-
-
-
-
-
 
   {path:'candidat',
   loadChildren:()=>import('./views/user/candidat/candidat.module').then((c)=>c.CandidatModule)
@@ -51,8 +39,6 @@ const routes: Routes = [
   {path:'addProjet',
   loadChildren:()=>import('./views/user/projet/add-projet/add-projet.module').then((pro)=>pro.AddProjetModule)
   },
-
-
   {path:'ressource',
   loadChildren:()=>import('./views/user/ressource/ressource.module').then((r)=>r.RessourceModule)
   },
@@ -61,14 +47,18 @@ const routes: Routes = [
   },
 
 
-
-
-
-  {path:'societe',
-  loadChildren:()=>import('./views/user/societe/societe.module').then((s)=>s.SocieteModule)
-  },
   {path:'client',
   loadChildren:()=>import('./views/user/client/client.module').then((cl)=>cl.ClientModule)
+  },
+  {path:'addClient',
+  loadChildren:()=>import('./views/user/client/add-client/add-client.module').then((m)=>m.AddClientModule)
+  },
+  {path:'updateClient/:id_societe',
+  loadChildren:()=>import('./views/user/client/update-client/update-client.module').then((m)=>m.UpdateClientModule)
+  },
+
+  {path:'societe',
+  loadChildren:()=>import('./views/user/societe/societe.module').then((sos)=>sos.SocieteModule)
   },
   {path:'add-societe',
   loadChildren:()=>import('./views/user/societe/add-societe/add-societe.module').then((a)=>a.AddSocieteModule)
@@ -76,31 +66,10 @@ const routes: Routes = [
   {path:'updateSociete/:id_societe',
   loadChildren:()=>import('./views/user/societe/update-societe/update-societe.module').then((a)=>a.UpdateSocieteModule)
   },
-  {path:'addClient',
-  loadChildren:()=>import('./views/user/client/add-client/add-client.module').then((m)=>m.AddClientModule)
-  },
-  {path:'updateClient/:id',
-  loadChildren:()=>import('./views/user/client/update-client/update-client.module').then((m)=>m.UpdateClientModule)
-  }
 
   ]
 
-},
-/** *************************************************************************************************** */
-
-  {path:'admin',component:AdminComponent,
-children:[
-  {path:'dashbord',
-  loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then((d)=>d.DashboardModule)},
-
-  {path:'societe',
-  loadChildren:()=>import('./views/admin/societe/societe.module').then((s)=>s.SocieteModule)
-
-}
-
-]
-}
-];
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

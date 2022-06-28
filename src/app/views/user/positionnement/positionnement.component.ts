@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PositionnementService } from '../services/positionnement.service';
-import {  Positionnement as PositionnementModel  } from '../models/Positionnement';
+import { Positionnement as PositionnementModel, Positionnement } from '../models/Positionnement';
 
 @Component({
   selector: 'app-positionnement',
@@ -9,6 +9,7 @@ import {  Positionnement as PositionnementModel  } from '../models/Positionnemen
 })
 export class PositionnementComponent implements OnInit {
 
+  successmsg!: string;
   positionnements!: PositionnementModel[];
 
   constructor(private _positionnementService:PositionnementService) {
@@ -21,11 +22,22 @@ export class PositionnementComponent implements OnInit {
   }
   getAllPositionnement()  {
 
-    this._positionnementService.getAllPositionnement().subscribe((data: PositionnementModel[])=>{
-      this.positionnements=data;
-      console.log("Positionnement!!  ",this.positionnements);
-    },(err: any)=>{
-      console.log("ERROR",err);
-    })
-  }
+    this._positionnementService.getAllPositionnement().subscribe((res:Positionnement[])=>{
+      this.positionnements=res;
+      console.log("all positionnement ==>",res);
+    }/*,(err: any)=>{
+      console.log("ERROR",err);}*/)
+}
+
+ // delete by id
+ deleteId(id_positionnement:number){
+  console.log('delete id ==>',id_positionnement)
+  this._positionnementService.deletePositionnementSer(id_positionnement).subscribe((res:Positionnement)=>{
+    console.log(res,'deleted res ==>')
+    this.successmsg='élèment supprimer avec succées !!';
+    this.getAllPositionnement();
+
+  });
+
+}
 }

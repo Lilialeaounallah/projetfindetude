@@ -22,17 +22,18 @@ export class SocieteComponent implements OnInit {
   }
 
 
-
+//get all societe
   getAllSociete()  {
 
-    this._societeService.getAllSociete().subscribe((res:Societe[])=>{this.societes=res;
-      console.log("aaa",res);
+    this._societeService.getAllSociete().subscribe((res:Societe[])=>{
+      this.societes=res;
+      console.log("all societe ==>",res);
     }/*,(err: any)=>{
       console.log("ERROR",err);}*/)
 
   }
 
-  //get delete id
+  // delete by id
   deleteId(id_societe:number){
     console.log('delete id ==>',id_societe)
     this._societeService.deleteSocieteSer(id_societe).subscribe((res:Societe)=>{

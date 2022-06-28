@@ -16,15 +16,7 @@ export class AddCandidatComponent implements OnInit {
   }
   ajout(f:any){
 
-    // call api and add send it to backends
 
-    console.log("candidat ",this.candidat);
-    this.candidatService.addCandidat(this.candidat).subscribe(data=>{
-      console.log("candidat added successfully", data);
-
-    },err=>{
-      console.log("Error",err)
-    })
 
 
   }

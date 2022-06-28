@@ -30,8 +30,5 @@
   "main": "main.js",
   "module": "main.esm.js",
   "unpkg": "main.min.js",
-  "types": "main.d.ts",
-  "devDependencies": {
-    "@types/luxon": "^2.3.2"
-  }
+  "types": "main.d.ts"
 }

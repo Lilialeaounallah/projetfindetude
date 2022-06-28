@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { BesoinRoutingModule } from './besoin-routing.module';
 import { BesoinComponent } from './besoin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddBesoinComponent } from './add-besoin/add-besoin.component';
+import { BesoinService } from '../services/besoin.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +17,10 @@ import { AddBesoinComponent } from './add-besoin/add-besoin.component';
   imports: [
     CommonModule,
     BesoinRoutingModule,
-    FormsModule
-  ]
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [BesoinService]
 })
 export class BesoinModule { }

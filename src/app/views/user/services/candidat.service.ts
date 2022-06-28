@@ -13,19 +13,33 @@ export class CandidatService {
 
    }
 
-    addCandidat(candidat: Candidat): Observable<any>{
-      return this._httpClient.post(this.candidatUrl+"/add",candidat);
-    }
     getAllCandidat(): Observable<Candidat[]>{
       console.log(this.candidatUrl);
       return this._httpClient.get<Candidat[]>(this.candidatUrl);
     }
-    getCandidatById(id: number): Observable<Candidat>{
-      return this._httpClient.get<Candidat>(`${this.candidatUrl}/${id}`);
-    }
+   /*getAllCandidat(): Observable<any>{
+  return this._httpClient.get<any>(`${this.candidatUrl}`)
+}*/
 
-    updateCandidat(id:number, body: Candidat): Observable<Candidat> {
-      return this._httpClient.put<Candidat>(`${this.candidatUrl}/${id}`, body);
-    }
+//servie to add Candidat
+ AddCandidatSer(data:any): Observable<any>{
+  return  this._httpClient.post(`${this.candidatUrl}/new`,data)
+ }
+
+ //service that will update Candidat
+ updateCandidatSer(data:any,id_candidat:number): Observable<Candidat> {
+   return this._httpClient.put<Candidat>(`${this.candidatUrl}/${id_candidat}`,data)
+ }
+
+ //service that delete Candidat by id
+ deleteCandidatSer(id_candidat:number): Observable<Candidat>{
+   return this._httpClient.delete<Candidat>(`${this.candidatUrl}/${id_candidat}`)
+ }
+
+ //service that get Candidat by is
+ getCandidatData(id_candidat:any):Observable<any>{
+   return this._httpClient.get(`${this.candidatUrl}/${id_candidat}`);
+
+ }
    }
 
