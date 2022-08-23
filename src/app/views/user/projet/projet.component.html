@@ -90,12 +90,13 @@
                                         <!--fin contenu forms data-->
 
                                         <td class="center ">
-                                            <a href="# " class="btn btn-tbl-edit btn-xs ">
-                                                <i class="fa fa-pencil "></i>
-                                            </a>
-                                            <a class="btn btn-tbl-delete btn-xs ">
-                                                <i class="fa fa-trash-o "></i>
-                                            </a>
+                                            <button class="btn btn-tbl-edit btn-xs " [routerLink]="['/updateProjet',projet.id_projet]">
+
+                                            <i class="fa fa-pencil "></i>
+                                        </button>
+                                            <button class="btn btn-tbl-delete btn-xs " (click)="deleteId(projet.id_projet)">
+                                            <i class="fa fa-trash-o "></i>
+                                        </button>
                                         </td>
                                     </tr>
 

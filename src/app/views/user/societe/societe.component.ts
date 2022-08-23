@@ -5,48 +5,37 @@ import { SocieteService } from '../services/societe.service';
 @Component({
   selector: 'app-societe',
   templateUrl: './societe.component.html',
-  styleUrls: ['./societe.component.css']
+  styleUrls: ['./societe.component.css'],
 })
 export class SocieteComponent implements OnInit {
   successmsg!: string;
-
   societes!: Societe[];
 
-  constructor(private _societeService:SocieteService) {
-
-
-  }
+  constructor(private _societeService: SocieteService) {}
 
   ngOnInit(): void {
     this.getAllSociete();
   }
 
-
-//get all societe
-  getAllSociete()  {
-
-    this._societeService.getAllSociete().subscribe((res:Societe[])=>{
-      this.societes=res;
-      console.log("all societe ==>",res);
-    }/*,(err: any)=>{
-      console.log("ERROR",err);}*/)
-
+  //get all societe
+  getAllSociete() {
+    this._societeService.getAllSociete().subscribe(
+      (res: Societe[]) => {
+        this.societes = res;
+        console.log('all societe ==>', res);
+      } /*,(err: any)=>{
+      console.log("ERROR",err);}*/
+    );
   }
 
   // delete by id
-  deleteId(id_societe:number){
-    console.log('delete id ==>',id_societe)
+  deleteId(id_societe: number) {
+    console.log('delete id ==>', id_societe);
     this._societeService.deleteSocieteSer(id_societe).subscribe((res:Societe)=>{
-      console.log(res,'deleted res ==>')
-      this.successmsg='élèment supprimer avec succées !!';
-      this.getAllSociete();
-
+      console.log(res, 'deleted res ==>');
+        this.successmsg = 'élèment supprimer avec succées !!';
+        this.getAllSociete();
     });
+
   }
-
-
-
-
-
-
 }

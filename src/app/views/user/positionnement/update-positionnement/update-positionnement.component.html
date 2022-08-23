@@ -2,10 +2,10 @@
     <div class="col-sm-12">
         <div class="card-box">
             <div class="card-head">
-                <h2 style="color: white;">Ajouter Positionnement</h2>
+                <h2 style="color: white;">Modifier Positionnement</h2>
                 <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
-      <i class="material-icons">more_vert</i>
-    </button>
+    <i class="material-icons">more_vert</i>
+  </button>
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
                     <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
                     </li>
@@ -30,7 +30,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
 
-            <form (ngSubmit)="addSPositionnement()" [formGroup]="positionnementForm">
+            <form (ngSubmit)="modifier()" [formGroup]="positionnementForm">
                 <fieldset>
                     <div class class="card-body row">
                         <div class="col-lg-6 p-t-20">

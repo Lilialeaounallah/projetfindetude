@@ -2,10 +2,10 @@
     <div class="col-sm-12">
         <div class="card-box">
             <div class="card-head">
-                <h2 style="color: white;">modifier candidat</h2>
+                <h2 style="color: white;">modifier besoin</h2>
                 <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
-  <i class="material-icons">more_vert</i>
-</button>
+    <i class="material-icons">more_vert</i>
+  </button>
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
                     <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
                     </li>
@@ -30,111 +30,110 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
 
-            <form (ngSubmit)="modifier()" [formGroup]="candidatForm">
+            <form (ngSubmit)="modifier()" [formGroup]="besoinForm">
                 <fieldset>
                     <div class class="card-body row">
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="civilite" type="text" required>
-                                <label class="mdl-textfield__label">civilite</label>
+                                <input class="mdl-textfield__input" formControlName="titre" type="text" required>
+                                <label class="mdl-textfield__label">titre</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="nom" type="text" required>
-                                <label class="mdl-textfield__label">nom</label>
+                                <input class="mdl-textfield__input" formControlName="reference_besoin" type="text" required>
+                                <label class="mdl-textfield__label">reference_besoin</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="prenom" type="text" required>
-                                <label class="mdl-textfield__label">prenom</label>
+                                <input class="mdl-textfield__input" formControlName="nom_client" type="text" required>
+                                <label class="mdl-textfield__label">nom_client</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="Date_de_naissance" type="text" required>
-                                <label class="mdl-textfield__label">Date_de_naissance</label>
+                                <input class="mdl-textfield__input" formControlName="nom_societe" type="text" required>
+                                <label class="mdl-textfield__label">nom_societe</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="email" type="email" required>
-                                <label class="mdl-textfield__label">email</label>
+                                <input class="mdl-textfield__input" formControlName="etat_besoin" required>
+                                <label class="mdl-textfield__label">etat_besoin</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="telephonne" type="number" required>
-                                <label class="mdl-textfield__label">telephonne</label>
+                                <input class="mdl-textfield__input" formControlName="type_besoin" required>
+                                <label class="mdl-textfield__label">etape_besoin</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="adress" type="text" required>
-                                <label class="mdl-textfield__label">adress</label>
+                                <input class="mdl-textfield__input" formControlName="discription" type="text" required>
+                                <label class="mdl-textfield__label">discription</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="ville" required>
-                                <label class="mdl-textfield__label">ville</label>
+                                <input class="mdl-textfield__input" formControlName="domaine" required>
+                                <label class="mdl-textfield__label">domaine</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="devis" type="text" required>
+                                <label class="mdl-textfield__label">devis</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="budget_envisage" type="number" required>
+                                <label class="mdl-textfield__label">budget_envisage</label>
                             </div>
                         </div>
 
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="code_postal" required>
-                                <label class="mdl-textfield__label">code_postal</label>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="pays" type="text" required>
-                                <label class="mdl-textfield__label">pays</label>
+                                <input class="mdl-textfield__input" formControlName="ponderation" type="number" required>
+                                <label class="mdl-textfield__label">ponderation</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="etat_condidat" type="text" required>
-                                <label class="mdl-textfield__label">etat_condidat</label>
+                                <input class="mdl-textfield__input" formControlName="ca_envisage" type="number" required>
+                                <label class="mdl-textfield__label">ca_envisage</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="provenance" type="text" required>
-                                <label class="mdl-textfield__label">provenance</label>
+                                <input class="mdl-textfield__input" formControlName="ca_pondere" type="number" required>
+                                <label class="mdl-textfield__label">ca_pondere</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="disponibilite" type="text" required>
-                                <label class="mdl-textfield__label">disponibilite</label>
+                                <input class="mdl-textfield__input" formControlName="duree" type="text" required>
+                                <label class="mdl-textfield__label">duree</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="mobilite" type="text" required>
-                                <label class="mdl-textfield__label">mobilite</label>
+                                <input class="mdl-textfield__input" formControlName="date_demarrage" type="date" required>
+                                <label class="mdl-textfield__label">date_demarrage</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="responsable_manager" type="text" required>
-                                <label class="mdl-textfield__label">responsable_manager</label>
+                                <input class="mdl-textfield__input" formControlName="date_cloture" type="date" required>
+                                <label class="mdl-textfield__label">date_cloture</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="agence" type="text" required>
-                                <label class="mdl-textfield__label">agence</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="evaluation" type="text " required>
-                                <label class="mdl-textfield__label ">evaluation</label>
+                                <input class="mdl-textfield__input" formControlName="date_reponse" type="date" required>
+                                <label class="mdl-textfield__label">date_reponse</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
@@ -143,6 +142,10 @@
                                 <label class="mdl-textfield__label ">commentaire</label>
                             </div>
                         </div>
+
+
+
+
 
 
 

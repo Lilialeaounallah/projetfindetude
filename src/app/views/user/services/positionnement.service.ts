@@ -24,7 +24,7 @@ constructor(private _httpClient:HttpClient) {
   }*/
 
     //add positionnement
-   AddClientSer(data:any): Observable<any>{
+   AddPositionnementSer(data:any): Observable<any>{
    return  this._httpClient.post(`${this.PositionnementUrl}/new`,data)
   }
  updateClientSer(data:any,id_positionnement:number): Observable<Positionnement> {
@@ -37,7 +37,7 @@ constructor(private _httpClient:HttpClient) {
   }
 
   //get positionnement by id
-  getSingleData(id_positionnement:any):Observable<any>{
+  getSingleDataSer(id_positionnement:any):Observable<any>{
     return this._httpClient.get(`${this.PositionnementUrl}/${id_positionnement}`);
 
   }

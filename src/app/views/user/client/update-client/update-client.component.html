@@ -2,10 +2,10 @@
     <div class="col-sm-12">
         <div class="card-box">
             <div class="card-head">
-                <h2 style="color: white;">modifier client</h2>
+                <h2 style="color: white;">modifier candidat</h2>
                 <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
-    <i class="material-icons">more_vert</i>
-  </button>
+  <i class="material-icons">more_vert</i>
+</button>
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
                     <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
                     </li>
@@ -16,7 +16,8 @@
                 </ul>
             </div>
 
-            <!-- Header -->
+            <!---------------start Form ------------------------------------------>
+
             <!--  show msg erreur errormsg-->
             <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong style="color: black;">{{errormsg}}</strong>
@@ -32,12 +33,7 @@
             <form (ngSubmit)="modifier()" [formGroup]="clientForm">
                 <fieldset>
                     <div class class="card-body row">
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="civilite" type="text" required>
-                                <label class="mdl-textfield__label">civilite</label>
-                            </div>
-                        </div>
+
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
                                 <input class="mdl-textfield__input" formControlName="nom" type="text" required>
@@ -58,41 +54,29 @@
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="service" required>
+                                <input class="mdl-textfield__input" formControlName="service" type="text" required>
                                 <label class="mdl-textfield__label">service</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="provenance" required>
-                                <label class="mdl-textfield__label">Provenance</label>
+                                <input class="mdl-textfield__input" formControlName="provenance" type="text" required>
+                                <label class="mdl-textfield__label">provenance</label>
                             </div>
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="libellet_preciser" type="text" required>
-                                <label class="mdl-textfield__label">plus d'information</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="ressource" required>
+                                <input class="mdl-textfield__input" formControlName="ressource" type="text" required>
                                 <label class="mdl-textfield__label">ressource</label>
                             </div>
                         </div>
+
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="agence" type="text" required>
-                                <label class="mdl-textfield__label">agence</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="societe" required>
+                                <input class="mdl-textfield__input" formControlName="societe" type="text" required>
                                 <label class="mdl-textfield__label">societe</label>
                             </div>
                         </div>
-
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
                                 <input class="mdl-textfield__input" formControlName="etat_client" type="text" required>
@@ -101,7 +85,7 @@
                         </div>
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="email" type="text" required>
+                                <input class="mdl-textfield__input" formControlName="email" type="email" required>
                                 <label class="mdl-textfield__label">email</label>
                             </div>
                         </div>
@@ -114,47 +98,16 @@
                         <div class="col-lg-6 p-t-20">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
                                 <input class="mdl-textfield__input" formControlName="adress" type="text" required>
-                                <label class="mdl-textfield__label">Adress</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="code_postal" type="text" required>
-                                <label class="mdl-textfield__label">Code postal</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="ville" type="text" required>
-                                <label class="mdl-textfield__label">Ville</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="pays" type="text" required>
-                                <label class="mdl-textfield__label">Pays</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                <input class="mdl-textfield__input" formControlName="commentaire" type="text " required>
-                                <label class="mdl-textfield__label ">commentaire</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20 ">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
-                                <input class="mdl-textfield__input " formControlName="domaine" required>
-                                <label class="mdl-textfield__label ">domaine</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-t-20 ">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
-                                <input class="mdl-textfield__input " formControlName="outils" required>
-                                <label class="mdl-textfield__label ">outils</label>
+                                <label class="mdl-textfield__label">adress</label>
                             </div>
                         </div>
 
-
+                        <div class="col-lg-6 p-t-20">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <input class="mdl-textfield__input" formControlName="domaine" required>
+                                <label class="mdl-textfield__label">domaine</label>
+                            </div>
+                        </div>
 
 
 
@@ -165,9 +118,11 @@
                     </div>
                 </fieldset>
             </form>
-
-
-
         </div>
     </div>
 </div>
+
+
+
+
+<!---------------end Form ------------------------------------------>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 })
 export class AddClientComponent implements OnInit {
   //Client = new Clientinsert ('','','','','',0,'',0,'',0,0,'','','','','','','',0,0)
-  constructor(private _serviceClient: ClientService) {}
+  constructor(private _serviceClient: ClientService,private router: Router) {}
   errormsg!: string;
   successmsg!: string;
 
@@ -25,7 +26,6 @@ clientForm = new FormGroup({
     'fonction': new FormControl('', Validators.required),
     'service': new FormControl('', Validators.required),
     'provenance': new FormControl('', Validators.required),
-    'libellet_preciser': new FormControl('', Validators.required),
     'ressource': new FormControl('', Validators.required),
     'agence': new FormControl('', Validators.required),
     'societe': new FormControl('', Validators.required),
@@ -36,9 +36,8 @@ clientForm = new FormGroup({
     'code_postal': new FormControl('', Validators.required),
     'ville': new FormControl('', Validators.required),
     'pays': new FormControl('', Validators.required),
-    'commentaire': new FormControl('', Validators.required),
     'domaine': new FormControl('', Validators.required),
-    'outils': new FormControl('', Validators.required),
+    'outils': new FormControl('', Validators.required)
   });
 
  //add client
@@ -48,7 +47,8 @@ clientForm = new FormGroup({
     this._serviceClient.AddClientSer(this.clientForm.value).subscribe((res)=>{
       console.log('data==>',res);
       this.clientForm.reset();
-      this.successmsg='client ajouter avec succées'
+      this.successmsg='client ajouter avec succées';
+      this.router.navigate(['/client']);
     },
     (err)=>{
       console.log('message erreur',err);

@@ -68,7 +68,7 @@
                                         <th class="center ">ville</th>
                                         <th class="center ">code postal</th>
                                         <th class="center ">pays</th>
-                                        <th class="center ">etat condidat</th>
+                                        <th class="center ">etat candidat</th>
                                         <th class="center ">provenance</th>
                                         <th class="center ">disponibllité</th>
                                         <th class="center ">mobilité</th>
@@ -97,7 +97,7 @@
                                         <td>{{condidat.ville}}</td>
                                         <td>{{condidat.code_postal}}</td>
                                         <td>{{condidat.pays}}</td>
-                                        <td>{{condidat.libellet}}</td>
+                                        <td>{{condidat.etat_condidat}}</td>
                                         <td>{{condidat.provenance}}</td>
                                         <td>dans 3 mois</td>
                                         <td>Ile de france</td>
@@ -106,13 +106,16 @@
                                         <td>{{condidat.evaluation}}</td>
                                         <!--fin contenu forms data-->
 
+
                                         <td class="center ">
-                                            <a href="# " class="btn btn-tbl-edit btn-xs ">
-                                                <i class="fa fa-pencil "></i>
-                                            </a>
-                                            <a class="btn btn-tbl-delete btn-xs ">
-                                                <i class="fa fa-trash-o "></i>
-                                            </a>
+                                            <button class="btn btn-tbl-edit btn-xs " [routerLink]="['/updateCandidat',condidat.id_condidat]">
+
+
+                                              <i class="fa fa-pencil "></i>
+                                          </button>
+                                            <button class="btn btn-tbl-delete btn-xs " (click)="deleteId(condidat.id_condidat)">
+                                              <i class="fa fa-trash-o "></i>
+                                          </button>
                                         </td>
                                     </tr>
 

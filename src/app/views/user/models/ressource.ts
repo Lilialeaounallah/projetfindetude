@@ -1,6 +1,6 @@
 export class Ressource {
 
-  id_ressource:string;
+  id_ressource!:number;
   civilite:string;
   nom:string;
   prenom:string;
@@ -18,7 +18,7 @@ etat_ressource:string;
 
 
   constructor(
-    id_ressource:string,
+    id_ressource:number,
     civilite:string,
   nom:string,
   prenom:string,

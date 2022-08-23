@@ -7,12 +7,14 @@ import { AddPositionnementComponent } from './add-positionnement/add-positionnem
 import { PositionnementService } from '../services/positionnement.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdatePositionnementComponent } from './update-positionnement/update-positionnement.component';
 
 
 @NgModule({
   declarations: [
     PositionnementComponent,
-    AddPositionnementComponent
+    AddPositionnementComponent,
+    UpdatePositionnementComponent
   ],
   imports: [
     CommonModule,

@@ -33,8 +33,8 @@ export class ClientService {
     }
 
     //get client by is
-    getSingleData(id_client:any):Observable<any>{
-      return this._httpClient.get(`${this.clientUrl}/${id_client}`);
+    getSingleData(id:any):Observable<any>{
+      return this._httpClient.get(`${this.clientUrl}/${id}`);
 
     }
 

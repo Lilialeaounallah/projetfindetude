@@ -21,7 +21,7 @@
     </li>
 
     <li class="nav-item tab-all">
-        <button routerLink="/add-besoin" class="button"><span>ajouter besoin</span></button>
+        <button routerLink="/addBesoin" class="button"><span>ajouter besoin</span></button>
     </li>
 </ul>
 
@@ -109,12 +109,13 @@
                                         <!--fin contenu forms data-->
 
                                         <td class="center ">
-                                            <a href="# " class="btn btn-tbl-edit btn-xs ">
-                                                <i class="fa fa-pencil "></i>
-                                            </a>
-                                            <a class="btn btn-tbl-delete btn-xs ">
-                                                <i class="fa fa-trash-o "></i>
-                                            </a>
+                                            <button class="btn btn-tbl-edit btn-xs " [routerLink]="['/updateBesoin',besoin.id_besoin]">
+
+                                              <i class="fa fa-pencil "></i>
+                                          </button>
+                                            <button class="btn btn-tbl-delete btn-xs " (click)="deleteId(besoin.id_besoin)">
+                                              <i class="fa fa-trash-o "></i>
+                                          </button>
                                         </td>
                                     </tr>
 

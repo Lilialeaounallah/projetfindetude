@@ -23,7 +23,7 @@ export class SocieteService {
   //add new societe
   addSocieteSer(data:any):Observable<any>{
     console.log(data,'add societe ==>');
-    return this._httpClient.post(`${this.SocieteUrl}/add`,data);
+    return this._httpClient.post(`${this.SocieteUrl}/new`,data);
   }
 
 

@@ -7,12 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddBesoinComponent } from './add-besoin/add-besoin.component';
 import { BesoinService } from '../services/besoin.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateBesoinComponent } from './update-besoin/update-besoin.component';
 
 
 @NgModule({
   declarations: [
     BesoinComponent,
-    AddBesoinComponent
+    AddBesoinComponent,
+    UpdateBesoinComponent
   ],
   imports: [
     CommonModule,

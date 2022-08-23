@@ -4,8 +4,8 @@
             <div class="card-head">
                 <h2 style="color: white;">Ajouter societe</h2>
                 <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
-        <i class="material-icons">more_vert</i>
-      </button>
+          <i class="material-icons">more_vert</i>
+        </button>
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
                     <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
                     </li>
@@ -132,10 +132,16 @@
                                 <label class="mdl-textfield__label ">code_ape</label>
                             </div>
                         </div>
+
                         <div class="col-lg-6 p-t-20 ">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width ">
-                                <input class="mdl-textfield__input " type="text " formControlName="id_ressource" required>
-                                <label class="mdl-textfield__label ">id_ressource</label>
+                            <div class="d-grid">
+
+                                <select class="" style="color: rgb(216, 215, 219); " formControlName="id_ressource">
+                  <option value="" selected disabled hidden>Choisir Ressource </option>
+                  <option *ngFor="let ressource of ressources " value="{{ressource.id_ressource}} " >
+                    {{ressource.id_ressource}}_  {{ressource.prenom}} {{ressource.nom}}
+                  </option>
+                </select>
                             </div>
                         </div>
 
@@ -143,8 +149,11 @@
 
 
 
+
+
+
                         <div class="col-lg-12 p-t-20 text-center ">
-                            <button type="btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink ">Submit</button>
+                            <button type="btn " class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20  " style="background-color:hsl(28, 82%, 53%)  ;">Submit</button>
                         </div>
 
 

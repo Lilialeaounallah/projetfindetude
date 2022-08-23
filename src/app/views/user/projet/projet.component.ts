@@ -36,7 +36,7 @@ export class ProjetComponent implements OnInit {
     deleteId(id_projet:number){
       console.log('delete id ==>',id_projet)
       this._projetService.deleteProjetSer(id_projet).subscribe((res:Projet)=>{
-        console.log(res,'deleted res ==>')
+        console.log('deleted res ==>',res)
         this.successmsg='élèment supprimer avec succées !!';
         this.getAllProjet();
 

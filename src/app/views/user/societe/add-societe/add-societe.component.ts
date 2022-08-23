@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SocieteService } from '../../services/societe.service';
+import { Ressource } from '../../models/ressource';
+import { RessourceService } from '../../services/ressource.service';
 
 @Component({
   selector: 'add-societe',
@@ -9,12 +12,15 @@ import { SocieteService } from '../../services/societe.service';
 })
 export class AddSocieteComponent implements OnInit {
   //societe: Societe = new Societe(0,'',0,'','',0,'','',0,'','','','','','',0,0,0)
-  constructor(private _service: SocieteService) {}
+  constructor(private _service: SocieteService,private router: Router,private _ressourceService:RessourceService) {}
 
   errormsg!: string;
   successmsg!: string;
+  ressources!: Ressource[];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllRessource();
+  }
 
   //definition of form group
   societeForm = new FormGroup({
@@ -37,6 +43,12 @@ export class AddSocieteComponent implements OnInit {
     id_ressource: new FormControl('', Validators.required),
   });
 
+ /* changeCity(e: any) {
+    this.cityName?.setValue(e.target.value, {
+      onlySelf: true,
+    });
+  }*/
+
   //add Societe
   addSociete() {
     if (this.societeForm.valid) {
@@ -47,6 +59,7 @@ export class AddSocieteComponent implements OnInit {
 
           this.societeForm.reset();
           this.successmsg = 'sociétè ajouter avec succées';
+          this.router.navigate(['/societe']);
         },
         (err) => {
           console.log('message erreur', err);
@@ -56,4 +69,14 @@ export class AddSocieteComponent implements OnInit {
       this.errormsg = 'merci de renseigner tous les champs !';
     }
   }
+    //get all ressource
+    getAllRessource()  {
+
+      this._ressourceService.getAllRessource().subscribe((res:Ressource[])=>{
+        this.ressources=res;
+        console.log("all ressources ==>",res);
+      }/*,(err: any)=>{
+        console.log("ERROR",err);}*/)
+
+    }
 }

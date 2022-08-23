@@ -27,18 +27,18 @@ export class CandidatService {
  }
 
  //service that will update Candidat
- updateCandidatSer(data:any,id_candidat:number): Observable<Candidat> {
-   return this._httpClient.put<Candidat>(`${this.candidatUrl}/${id_candidat}`,data)
+ updateCandidatSer(data:any,id_condidat:number): Observable<Candidat> {
+   return this._httpClient.put<Candidat>(`${this.candidatUrl}/${id_condidat}`,data)
  }
 
  //service that delete Candidat by id
- deleteCandidatSer(id_candidat:number): Observable<Candidat>{
-   return this._httpClient.delete<Candidat>(`${this.candidatUrl}/${id_candidat}`)
+ deleteCandidatSer(id_condidat:number): Observable<Candidat>{
+   return this._httpClient.delete<Candidat>(`${this.candidatUrl}/${id_condidat}`)
  }
 
  //service that get Candidat by is
- getCandidatData(id_candidat:any):Observable<any>{
-   return this._httpClient.get(`${this.candidatUrl}/${id_candidat}`);
+ getSingleDataSer(id:any):Observable<any>{
+   return this._httpClient.get(`${this.candidatUrl}/${id}`);
 
  }
    }

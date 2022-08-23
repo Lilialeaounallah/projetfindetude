@@ -30,9 +30,9 @@ export class CandidatComponent implements OnInit {
   }
 
   // delete by id
-  deleteId(id_candidat:number){
-    console.log('delete id ==>',id_candidat)
-    this._candidatService.deleteCandidatSer(id_candidat).subscribe((res:Candidat)=>{
+  deleteId(id_condidat:number){
+    console.log('delete id ==>',id_condidat)
+    this._candidatService.deleteCandidatSer(id_condidat).subscribe((res:Candidat)=>{
       console.log(res,'deleted res ==>')
       this.successmsg='élèment supprimer avec succées !!';
       this.getAllCandidat();

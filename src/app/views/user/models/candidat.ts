@@ -1,5 +1,5 @@
 export class Candidat {
-  id!:number;
+  id_condidat!:number;
   civilite: string;
   nom: string;
   prenom: string;
@@ -10,7 +10,7 @@ export class Candidat {
   ville: string;
   code_postal: number;
   pays: string;
-  libellet: string;
+  etat_condidat: string;
   provenance: string;
   disponibilite: string;
   mobilite: string;
@@ -21,7 +21,7 @@ export class Candidat {
   // constructor(){
   // }
   constructor(
-    id:number,
+    id_condidat:number,
     civilite: string,
     nom: string,
     prenom: string,
@@ -32,7 +32,7 @@ export class Candidat {
     ville: string,
     code_postal: number,
     pays: string,
-    libellet: string,
+    etat_condidat: string,
     provenance: string,
     disponibilite: string,
     mobilite: string,
@@ -41,7 +41,7 @@ export class Candidat {
     evaluation: string,
     commentaire :string
   ) {
-    this.id=id;
+    this.id_condidat=id_condidat;
     this.civilite = civilite;
     this.nom = nom;
     this.prenom = prenom;
@@ -52,7 +52,7 @@ export class Candidat {
     this.ville = ville;
     this.code_postal = code_postal;
     this.pays = pays;
-    this.libellet = libellet;
+    this.etat_condidat = etat_condidat;
     this.provenance = provenance;
     this.disponibilite = disponibilite;
     this.mobilite = mobilite;
